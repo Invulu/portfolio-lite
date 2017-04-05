@@ -1,0 +1,171 @@
+/************************************************
+	Conditionals
+************************************************/
+
+/* Gloal Color Brightness */
+
+body.dark {
+	color: #cccccc;
+	color: rgba(255, 255, 255, 0.7);
+	border-color: rgba(255, 255, 255, 0.12);
+}
+.dark h1, .dark h2, .dark h3,
+.dark h4, .dark h5, .dark h6 {
+	color: #ffffff;
+	border-color: rgba(255, 255, 255, 0.12);
+}
+.dark blockquote,
+.dark .headline {
+	color: #ffffff;
+	border-color: #ffffff;
+}
+
+/* Header Color Brightness */
+
+.dark .site-title a,
+.dark .site-title a:link,
+.dark .site-title a:visited {
+	color: #ffffff;
+}
+.dark .site-description {
+	color: rgba(255, 255, 255, 0.7);
+}
+.dark .top-navigation,
+.dark #masthead.full-width,
+.dark.portfolio-not-single.portfolio-no-img.portfolio-has-desc #masthead,
+.dark.portfolio-not-single.portfolio-no-img.portfolio-has-title #masthead  {
+	border-color: rgba(255, 255, 255, 0.12);
+}
+.dark .social-icons li a {
+	color: rgba(255, 255, 255, 0.3);
+	border-color: rgba(255, 255, 255, 0.12);
+}
+.dark .social-icons li a:hover {
+	color: #ffffff;
+}
+
+/* Content Color Brightness */
+
+.dark .content .five.columns {
+	border-color: rgba(255, 255, 255, 0.12);
+}
+.dark .flexslider .title,
+.dark .flexslider .title a,
+.dark .flexslider .title a:link,
+.dark .flexslider .title a:visited {
+	color: rgba(255, 255, 255, 0.6);
+}
+.dark .flexslider .title a:hover,
+.dark .flexslider .title a:active,
+.dark .flexslider .title a:focus {
+	color: #ffffff;
+}
+.dark .wp-caption-dd,
+.dark .wp-caption p.wp-caption-text,
+.dark .post-navigation a,
+.dark .post-navigation a:link,
+.dark .post-navigation a:visited,
+.dark .flex-direction-nav .flex-next i,
+.dark .flex-direction-nav .flex-prev i,
+.dark .flex-slide-count {
+	color: rgba(255, 255, 255, 0.4);
+}
+.dark .post-navigation a:hover,
+.dark .post-navigation a:active,
+.dark .post-navigation a:focus,
+.dark .flex-direction-nav .flex-next:hover i,
+.dark .flex-direction-nav .flex-prev:hover i {
+	color: #ffffff;
+}
+.dark .next-post,
+.dark .flex-direction-nav .flex-next {
+	border-color: rgba(255, 255, 255, 0.12);
+}
+.dark .flexslider .preloader {
+	border-bottom-color: rgba(255, 255, 255, 0.12);
+	border-left-color: rgba(255, 255, 255, 0.12);
+	border-right-color: rgba(255, 255, 255, 0.4);
+	border-top-color: rgba(255, 255, 255, 0.4);
+}
+.dark .excerpt p:first-child,
+.dark .article h1:first-child + p,
+.dark .article > p:first-child,
+.dark .article span + p {
+	color: #ffffff;
+}
+.dark article.comment,
+.dark .testimonial .information,
+.dark .showcase-category .archive-holder .title.no-img {
+	background-color: rgba(255, 255, 255, 0.04);
+}
+.dark .post-meta,
+.dark .testimonial .author {
+	color: #999999;
+	color: rgba(255, 255, 255, 0.4);
+}
+.dark .post-meta::before,
+.dark .blog-holder .article,
+.dark .archive-holder .article {
+	border-color: rgba(255, 255, 255, 0.12);
+}
+.dark .post-taxonomy a {
+	color: rgba(255, 255, 255, 0.4) !important;
+	border-color: rgba(255, 255, 255, 0.12);
+}
+.dark .post-taxonomy a:hover {
+	color: #ffffff !important;
+}
+
+/* Button Color Brightness */
+
+.dark button, .dark .button, .dark a.button, .dark .reply a, .dark #searchsubmit,
+.dark #prevLink a, .dark #nextLink a, .dark a.more-link, .dark #submit,
+.dark input[type=submit], .dark input#submit, .dark input.button, .dark #wrapper #infinite-handle span {
+	color: rgba(255, 255, 255, 0.4) !important;
+}
+.dark button:hover, .dark .button:hover, .dark a.button:hover, .dark .reply a:hover,
+.dark #searchsubmit:hover, .dark #prevLink a:hover, .dark #nextLink a:hover, .dark a.more-link:hover,
+.dark input[type=submit]:hover, .dark #submit:hover, .dark input#submit:hover, .dark input.button:hover,
+.dark #wrapper #infinite-handle span:hover {
+	color: #ffffff !important;
+}
+
+/* Footer Color Brightness */
+
+.dark .footer {
+	border-color: rgba(255, 255, 255, 0.12);
+}
+.dark .footer-information p {
+	color: rgba(255, 255, 255, 0.4);
+}
+.dark .footer-information a {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+/* Menu Color Brightness */
+
+.dark ul.menu a,
+.dark ul.menu a:link,
+.dark ul.menu a:visited {
+	color: #cccccc;
+	color: rgba(255, 255, 255, 0.6);
+	border-color: rgba(255, 255, 255, 0);
+}
+.dark ul.menu a:focus,
+.dark ul.menu a:hover,
+.dark ul.menu a:active {
+	color: #ffffff;
+	border-color: #ffffff;
+}
+.dark ul.menu li li a,
+.dark ul.menu li li a:link,
+.dark ul.menu li li a:visited,
+.dark .footer-menu ul.menu li {
+	border-color: rgba(255, 255, 255, 0.12);
+}
+.dark button.menu-toggle svg {
+	fill: rgba(255, 255, 255, 0.6);
+}
+.dark button.menu-toggle:hover svg {
+	fill: rgba(255, 255, 255, 1);
+}

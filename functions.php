@@ -1,0 +1,582 @@
+<?php
+/**
+ * This file includes the theme functions.
+ *
+ * @package Portfolio
+ * @since Portfolio Lite 1.0
+ */
+
+/*
+-------------------------------------------------------------------------------------------------------
+	Theme Setup
+-------------------------------------------------------------------------------------------------------
+*/
+
+if ( ! function_exists( 'portfolio_lite_setup' ) ) :
+
+	/** Function portfolio_lite_setup */
+	function portfolio_lite_setup() {
+
+		/*
+		* Enable support for translation.
+		*/
+		load_theme_textdomain( 'portfolio-lite', get_template_directory() . '/languages' );
+
+		/*
+		* Enable support for RSS feed links to head.
+		*/
+		add_theme_support( 'automatic-feed-links' );
+
+		/*
+		* Enable support for post thumbnails.
+		*/
+		add_theme_support( 'post-thumbnails' );
+
+		add_image_size( 'portfolio-featured-large', 2400, 1800, true ); // Large Featured Image.
+		add_image_size( 'portfolio-featured-medium', 1200, 800, true ); // Medium Featured Image.
+		add_image_size( 'portfolio-featured-small', 640, 640, true ); // Small Featured Image.
+		add_image_size( 'portfolio-featured-square', 1200, 1200, true ); // Square Featured Image.
+
+		/*
+		* Enable support for site title tag.
+		*/
+		add_theme_support( 'title-tag' );
+
+		/*
+		* Enable support for custom logo.
+		*/
+		add_theme_support( 'custom-logo', array(
+			'height'      => 360,
+			'width'       => 360,
+			'flex-height' => true,
+			'flex-width'  => true,
+			'header-text' => array( 'site-title' ),
+		) );
+
+		/*
+		* Enable support for custom menus.
+		*/
+		register_nav_menus( array(
+			'main-menu' => esc_html__( 'Main Menu', 'portfolio-lite' ),
+			'slide-menu' => esc_html__( 'Slide Menu', 'portfolio-lite' ),
+			'social-menu' => esc_html__( 'Social Menu', 'portfolio-lite' ),
+			'footer-menu' => esc_html__( 'Footer Menu', 'portfolio-lite' ),
+		));
+
+		/*
+		* Enable support for custom header.
+		*/
+		register_default_headers( array(
+			'default' => array(
+			'url'   => get_template_directory_uri() . '/images/default-header.jpg',
+			'thumbnail_url' => get_template_directory_uri() . '/images/default-header.jpg',
+			'description'   => esc_html__( 'Default Custom Header', 'portfolio-lite' ),
+			),
+		));
+		$defaults = array(
+			'width'								=> 1800,
+			'height'							=> 480,
+			'flex-height'					=> true,
+			'flex-width'					=> true,
+			'default-image' 			=> get_template_directory_uri() . '/images/default-header.jpg',
+			'header-text'					=> false,
+			'uploads'							=> true,
+		);
+		add_theme_support( 'custom-header', $defaults );
+
+		/*
+		* Enable support for custom background.
+		*/
+		$defaults = array(
+			'default-color'          => 'ffffff',
+		);
+		add_theme_support( 'custom-background', $defaults );
+
+		/*
+		* Enable theme starter content.
+		*/
+		add_theme_support( 'starter-content', array(
+
+			// Set default theme options.
+			'options' => array(
+				'custom_logo' => '{{logo}}',
+				'show_on_front' => 'page',
+				'page_on_front' => '{{home}}',
+				'page_for_posts' => '{{blog}}',
+				'blogname' => __( 'Portfolio Lite Theme', 'portfolio-lite' ),
+				'blogdescription' => __( 'My <b>Awesome</b> Organic Theme', 'portfolio-lite' ),
+			),
+
+			// Starter pages to include.
+			'posts' => array(
+				'home' => array(
+					'template' => 'template-slideshow-gallery.php',
+				),
+				'about' => array(
+					'thumbnail' => '{{image-about}}',
+				),
+				'services' => array(
+					'post_type' => 'page',
+					'post_title' => __( 'Services', 'portfolio-lite' ),
+					'post_content' => __( '<p>This is an example services page. You may want to write about the various services your company provides.</p>', 'portfolio-lite' ),
+					'thumbnail' => '{{image-services}}',
+				),
+				'blog',
+				'contact' => array(
+					'thumbnail' => '{{image-contact}}',
+				),
+			),
+
+			// Starter attachments for default images.
+			'attachments' => array(
+				'logo' => array(
+					'post_title' => __( 'Logo', 'portfolio-lite' ),
+					'file' => 'images/logo.png',
+				),
+				'image-about' => array(
+					'post_title' => __( 'About Image', 'portfolio-lite' ),
+					'file' => 'images/image-about.jpg',
+				),
+				'image-services' => array(
+					'post_title' => __( 'Services Image', 'portfolio-lite' ),
+					'file' => 'images/image-services.jpg',
+				),
+				'image-contact' => array(
+					'post_title' => __( 'Contact Image', 'portfolio-lite' ),
+					'file' => 'images/image-contact.jpg',
+				),
+			),
+
+			// Add pages to primary navigation menu.
+			'nav_menus' => array(
+				'main-menu' => array(
+					'name' => __( 'Primary Navigation', 'portfolio-lite' ),
+					'items' => array(
+						'link_home',
+						'page_about',
+						'page_services' => array(
+							'type' => 'post_type',
+							'object' => 'page',
+							'object_id' => '{{services}}',
+						),
+						'page_blog',
+						'page_contact',
+					),
+				)
+			)
+
+		));
+
+	}
+endif; // End function portfolio_lite_setup.
+add_action( 'after_setup_theme', 'portfolio_lite_setup' );
+
+/*
+-------------------------------------------------------------------------------------------------------
+	Register Scripts
+-------------------------------------------------------------------------------------------------------
+*/
+
+if ( ! function_exists( 'portfolio_lite_enqueue_scripts' ) ) {
+
+	/** Function portfolio_lite_enqueue_scripts */
+	function portfolio_lite_enqueue_scripts() {
+
+		// Enqueue Styles.
+		wp_enqueue_style( 'portfolio-style', get_stylesheet_uri() );
+		wp_enqueue_style( 'portfolio-style-conditionals', get_template_directory_uri() . '/css/style-conditionals.css', array( 'portfolio-style' ), '1.0' );
+		wp_enqueue_style( 'portfolio-style-mobile', get_template_directory_uri() . '/css/style-mobile.css', array( 'portfolio-style' ), '1.0' );
+		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.css', array( 'portfolio-style' ), '1.0' );
+
+		// Resgister Scripts.
+		wp_register_script( 'jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), '1.0' );
+		wp_register_script( 'jquery-colourbrightness', get_template_directory_uri() . '/js/jquery.colourbrightness.js', array( 'jquery' ), '1.0' );
+
+		// Enqueue Scripts.
+		wp_enqueue_script( 'hoverIntent' );
+		wp_enqueue_script( 'portfolio-slideout', get_template_directory_uri() . '/js/slideout.js', array(), '1.0' );
+		wp_enqueue_script( 'portfolio-custom', get_template_directory_uri() . '/js/jquery.custom.js', array( 'jquery', 'jquery-fitvids', 'jquery-colourbrightness' ), '1.0', true );
+
+		// Load Flexslider on front page and slideshow page template.
+		if ( is_single() || is_page_template( 'template-slideshow-gallery.php' ) ) {
+			wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', array( 'jquery' ), '20130729' );
+		}
+
+		// Load single scripts only on single pages.
+		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+			wp_enqueue_script( 'comment-reply' );
+		}
+	}
+}
+add_action( 'wp_enqueue_scripts', 'portfolio_lite_enqueue_scripts' );
+
+/*
+-------------------------------------------------------------------------------------------------------
+	Category ID to Name
+-------------------------------------------------------------------------------------------------------
+*/
+
+/**
+ * Changes category IDs to names.
+ *
+ * @param array $id IDs for categories.
+ * @return array
+ */
+
+if ( ! function_exists( 'portfolio_lite_cat_id_to_name' ) ) :
+
+function portfolio_lite_cat_id_to_name( $id ) {
+	$cat = get_category( $id );
+	if ( is_wp_error( $cat ) ) {
+		return false; }
+	return $cat->cat_name;
+}
+endif;
+
+/*
+-------------------------------------------------------------------------------------------------------
+	Register Sidebars
+-------------------------------------------------------------------------------------------------------
+*/
+
+if ( ! function_exists( 'portfolio_lite_widgets_init' ) ) :
+
+/** Function portfolio_lite_widgets_init */
+function portfolio_lite_widgets_init() {
+	register_sidebar(array(
+		'name' => esc_html__( 'Default Sidebar', 'portfolio-lite' ),
+		'id' => 'sidebar-1',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	));
+	register_sidebar(array(
+		'name' => esc_html__( 'Blog Sidebar', 'portfolio-lite' ),
+		'id' => 'sidebar-blog',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	));
+}
+endif;
+add_action( 'widgets_init', 'portfolio_lite_widgets_init' );
+
+/*
+-------------------------------------------------------------------------------------------------------
+	Posted On Function
+-------------------------------------------------------------------------------------------------------
+*/
+
+if ( ! function_exists( 'portfolio_lite_posted_on' ) ) :
+
+/** Function portfolio_lite_posted_on */
+function portfolio_lite_posted_on() {
+	if ( get_the_modified_time() != get_the_time() ) {
+		printf( __( '<span class="%1$s">Updated:</span> %2$s', 'portfolio-lite' ),
+			'meta-prep meta-prep-author',
+			sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
+				esc_url( get_permalink() ),
+				esc_attr( get_the_modified_time() ),
+				esc_attr( get_the_modified_date() )
+			)
+		);
+	} else {
+		printf( __( '<span class="%1$s">Posted:</span> %2$s', 'portfolio-lite' ),
+			'meta-prep meta-prep-author',
+			sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
+				esc_url( get_permalink() ),
+				esc_attr( get_the_time() ),
+				get_the_date()
+			)
+		);
+	}
+}
+endif;
+
+/*
+------------------------------------------------------------------------------------------------------
+	Content Width
+------------------------------------------------------------------------------------------------------
+*/
+
+if ( ! isset( $content_width ) ) { $content_width = 760; }
+
+if ( ! function_exists( 'portfolio_lite_content_width' ) ) :
+
+/** Function portfolio_lite_content_width */
+function portfolio_lite_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'portfolio_lite_content_width', 760 );
+}
+endif;
+add_action( 'after_setup_theme', 'portfolio_lite_content_width', 0 );
+
+/*
+-------------------------------------------------------------------------------------------------------
+	Comments Function
+-------------------------------------------------------------------------------------------------------
+*/
+
+if ( ! function_exists( 'portfolio_lite_comment' ) ) :
+
+	/**
+	 * Setup our comments for the theme.
+	 *
+	 * @param array $comment IDs for categories.
+	 * @param array $args Comment arguments.
+	 * @param array $depth Level of replies.
+	 */
+	function portfolio_lite_comment( $comment, $args, $depth ) {
+		switch ( $comment->comment_type ) :
+			case 'pingback' :
+			case 'trackback' :
+		?>
+		<li class="post pingback">
+		<p><?php esc_html_e( 'Pingback:', 'portfolio-lite' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( esc_html__( 'Edit', 'portfolio-lite' ), '<span class="edit-link">', '</span>' ); ?></p>
+	<?php
+		break;
+			default :
+		?>
+		<li <?php comment_class(); ?> id="<?php echo esc_attr( 'li-comment-' . get_comment_ID() ); ?>">
+
+		<article id="<?php echo esc_attr( 'comment-' . get_comment_ID() ); ?>" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<?php
+						$avatar_size = 36;
+					if ( '0' != $comment->comment_parent ) {
+						$avatar_size = 36; }
+
+						echo get_avatar( $comment, $avatar_size );
+
+						/* translators: 1: comment author, 2: date and time */
+						printf( __( '%1$s %2$s', 'portfolio-lite' ),
+							sprintf( '<span class="comment-name">%s</span>', wp_kses_post( get_comment_author_link() ) ),
+							sprintf( '<a class="comment-time" href="%1$s"><time pubdate datetime="%2$s">%3$s</time></a>',
+								esc_url( get_comment_link( $comment->comment_ID ) ),
+								get_comment_time( 'c' ),
+								/* translators: 1: date, 2: time */
+								sprintf( esc_html__( '%1$s, %2$s', 'portfolio-lite' ), get_comment_date(), get_comment_time() )
+							)
+						);
+						?>
+					</div><!-- END .comment-author .vcard -->
+				</footer>
+
+				<div class="comment-content">
+					<?php if ( '0' == $comment->comment_approved ) : ?>
+					<em class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'portfolio-lite' ); ?></em>
+					<br />
+				<?php endif; ?>
+					<?php comment_text(); ?>
+					<div class="reply">
+					<?php comment_reply_link( array_merge( $args, array( 'reply_text' => esc_html__( 'Reply', 'portfolio-lite' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+					</div><!-- .reply -->
+					<?php edit_comment_link( esc_html__( '(Edit)', 'portfolio-lite' ), '<span class="edit-link">', '</span>' ); ?>
+				</div>
+
+			</article><!-- #comment-## -->
+
+		<?php
+		break;
+		endswitch;
+	}
+endif; // Ends check for portfolio_lite_comment().
+
+/*
+-------------------------------------------------------------------------------------------------------
+	Custom Excerpt
+-------------------------------------------------------------------------------------------------------
+*/
+
+/**
+ * Adds a custom excerpt length.
+ *
+ * @param array $length Excerpt word count.
+ * @return array
+ */
+
+if ( ! function_exists( 'portfolio_lite_excerpt_length' ) ) :
+
+function portfolio_lite_excerpt_length( $length ) {
+	return 38;
+}
+endif;
+add_filter( 'excerpt_length', 'portfolio_lite_excerpt_length', 999 );
+
+/**
+ * Return custom read more link text for the excerpt.
+ *
+ * @param array $more is the excerpt more link.
+ * @return array
+ */
+
+if ( ! function_exists( 'portfolio_lite_excerpt_more' ) ) :
+
+function portfolio_lite_excerpt_more( $more ) {
+	return '... <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">'. esc_html__( 'Read More', 'portfolio-lite' ) .'</a>';
+}
+endif;
+add_filter( 'excerpt_more', 'portfolio_lite_excerpt_more' );
+
+/*
+-------------------------------------------------------------------------------------------------------
+	Custom Page Links
+-------------------------------------------------------------------------------------------------------
+*/
+
+/**
+ * Adds custom page links to pages.
+ *
+ * @param array $args for page links.
+ * @return array
+ */
+
+if ( ! function_exists( 'portfolio_lite_wp_link_pages_args_prevnext_add' ) ) :
+
+function portfolio_lite_wp_link_pages_args_prevnext_add( $args ) {
+	global $page, $numpages, $more, $pagenow;
+
+	if ( ! $args['next_or_number'] == 'next_and_number' ) {
+		return $args; }
+
+	$args['next_or_number'] = 'number'; // Keep numbering for the main part.
+	if ( ! $more ) {
+		return $args; }
+
+	if ( $page -1 ) { // There is a previous page.
+		$args['before'] .= _wp_link_page( $page -1 )
+			. $args['link_before']. $args['previouspagelink'] . $args['link_after'] . '</a>'; }
+
+	if ( $page < $numpages ) { // There is a next page.
+		$args['after'] = _wp_link_page( $page + 1 )
+			. $args['link_before'] . $args['nextpagelink'] . $args['link_after'] . '</a>'
+			. $args['after']; }
+
+	return $args;
+}
+endif;
+add_filter( 'wp_link_pages_args', 'portfolio_lite_wp_link_pages_args_prevnext_add' );
+
+/*
+-------------------------------------------------------------------------------------------------------
+	Remove First Gallery
+-------------------------------------------------------------------------------------------------------
+*/
+
+/**
+ * Removes first gallery shortcode from slideshow page template.
+ *
+ * @param array $content Content output on slideshow page template.
+ * @return array
+ */
+
+if ( ! function_exists( 'portfolio_lite_remove_gallery' ) ) :
+
+function portfolio_lite_remove_gallery( $content ) {
+	if ( is_page_template( 'template-slideshow.php' ) && get_post_gallery() || is_single() && get_post_gallery() ) {
+		$regex = get_shortcode_regex( array( 'gallery' ) );
+		$content = preg_replace( '/'. $regex .'/s', '', $content, 1 );
+		$content = $content;
+	}
+	return $content;
+}
+endif;
+add_filter( 'the_content', 'portfolio_lite_remove_gallery' );
+
+/*
+-------------------------------------------------------------------------------------------------------
+	Body Class
+-------------------------------------------------------------------------------------------------------
+*/
+
+/**
+ * Adds custom classes to the array of body classes.
+ *
+ * @param array $classes Classes for the body element.
+ * @return array
+ */
+
+if ( ! function_exists( 'portfolio_lite_body_class' ) ) :
+
+function portfolio_lite_body_class( $classes ) {
+
+	$header_image = get_header_image();
+	$post_pages = is_home() || is_archive() || is_search() || is_attachment();
+	$slide_pages = is_page_template( 'template-slideshow-gallery.php' );
+
+	if ( $slide_pages ) {
+		$classes[] = 'portfolio-slideshow'; }
+
+	if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
+		$classes[] = 'portfolio-has-logo';
+	} else {
+		$classes[] = 'portfolio-no-logo'; 
+	}
+
+	if ( '' != get_theme_mod( 'portfolio_lite_site_title' ) ) {
+		$classes[] = 'portfolio-has-title';
+	} else {
+		$classes[] = 'portfolio-no-title';
+	}
+
+	if ( '' != get_theme_mod( 'header_text' ) ) {
+		$classes[] = 'portfolio-has-desc';
+	} else {
+		$classes[] = 'portfolio-no-desc';
+	}
+
+	if ( ! is_single() ) {
+		$classes[] = 'portfolio-not-single'; }
+
+	if ( is_singular() && ! has_post_thumbnail() ) {
+		$classes[] = 'portfolio-no-img'; }
+
+	if ( is_singular() && has_post_thumbnail() ) {
+		$classes[] = 'portfolio-has-img'; }
+
+	if ( $post_pages && ! empty( $header_image ) || is_page() && ! has_post_thumbnail() && ! empty( $header_image ) || is_single() && ! has_post_thumbnail() && ! empty( $header_image ) ) {
+		$classes[] = 'portfolio-header-active';
+	} else {
+		$classes[] = 'portfolio-header-inactive';
+	}
+
+	if ( is_singular() ) {
+		$classes[] = 'portfolio-singular';
+	}
+
+	if ( is_page() && is_active_sidebar( 'sidebar-1' ) || is_home() && is_active_sidebar( 'sidebar-blog' ) || is_category( 'blog' ) && is_active_sidebar( 'sidebar-blog' ) || is_archive() && is_active_sidebar( 'sidebar-blog' ) || is_search() && is_active_sidebar( 'sidebar-blog' ) ) {
+		$classes[] = 'portfolio-has-sidebar';
+	} else {
+		$classes[] = 'portfolio-no-sidebar';
+	}
+
+	if ( is_active_sidebar( 'sidebar-1' ) ) {
+		$classes[] = 'portfolio-sidebar-1';
+	}
+
+	if ( '' != get_theme_mod( 'background_image' ) ) {
+		// This class will render when a background image is set
+		// regardless of whether the user has set a color as well.
+		$classes[] = 'portfolio-background-image';
+	} else if ( ! in_array( get_background_color(), array( '', get_theme_support( 'custom-background', 'default-color' ) ), true ) ) {
+		// This class will render when a background color is set
+		// but no image is set. In the case the content text will
+		// Adjust relative to the background color.
+		$classes[] = 'portfolio-relative-text';
+	}
+
+	return $classes;
+}
+endif;
+add_action( 'body_class', 'portfolio_lite_body_class' );
+
+/*
+-------------------------------------------------------------------------------------------------------
+	Includes
+-------------------------------------------------------------------------------------------------------
+*/
+
+require_once( get_template_directory() . '/customizer/customizer.php' );
+require_once( get_template_directory() . '/includes/typefaces.php' );
