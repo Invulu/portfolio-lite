@@ -1,6 +1,6 @@
 === Portfolio Lite ===
 
-Version: 1.0
+Version: 1.0.1
 Contributors: organicthemes, itsdavidmorgan
 Tags: one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, featured-images, featured-image-header, flexible-header, full-width-template, translation-ready, sticky-post, threaded-comments, editor-style, theme-options
 License: GPLv2 or later
@@ -38,3 +38,6 @@ A minimally designed theme framework for WordPress. Created by Organic Themes.
 
 CHANGELOG v1.0:
 - Initial build
+
+CHANGELOG v1.0.1:
+- Added defaults to body class conditionals

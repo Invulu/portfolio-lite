@@ -512,16 +512,16 @@ function portfolio_lite_body_class( $classes ) {
 	if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
 		$classes[] = 'portfolio-has-logo';
 	} else {
-		$classes[] = 'portfolio-no-logo'; 
+		$classes[] = 'portfolio-no-logo';
 	}
 
-	if ( '' != get_theme_mod( 'portfolio_lite_site_title' ) ) {
+	if ( '' != get_theme_mod( 'portfolio_lite_site_title', '1' ) ) {
 		$classes[] = 'portfolio-has-title';
 	} else {
 		$classes[] = 'portfolio-no-title';
 	}
 
-	if ( '' != get_theme_mod( 'header_text' ) ) {
+	if ( '' != get_theme_mod( 'header_text', '1' ) ) {
 		$classes[] = 'portfolio-has-desc';
 	} else {
 		$classes[] = 'portfolio-no-desc';
