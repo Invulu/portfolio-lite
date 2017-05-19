@@ -45,7 +45,7 @@ function portfolio_lite_fonts_url() {
 		}
 
 		if ( 'off' !== $montserrat ) {
-			$font_families[] = 'Montserrat:400,700';
+			$font_families[] = 'Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i';
 		}
 
 		if ( 'off' !== $droid_serif ) {

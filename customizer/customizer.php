@@ -15,9 +15,9 @@
  */
 function portfolio_lite_theme_customizer( $wp_customize ) {
 
-	get_template_part( 'customizer/customizer', 'controls' );
+	include( get_template_directory() . '/customizer/customizer-controls.php');
 
-	get_template_part( 'customizer/customizer', 'sanitize' );
+	include( get_template_directory() . '/customizer/customizer-sanitize.php');
 
 	/**
 	 * Render the site title for the selective refresh partial.
@@ -81,16 +81,16 @@ function portfolio_lite_theme_customizer( $wp_customize ) {
 		) ) );
 
 		// Custom Display Tagline Option.
-		$wp_customize->add_setting( 'header_text', array(
+		$wp_customize->add_setting( 'portfolio_lite_site_tagline', array(
 			'default'						=> '1',
 			'sanitize_callback'	=> 'portfolio_lite_sanitize_checkbox',
 			'transport'					=> 'postMessage',
 		) );
-		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'header_text', array(
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'portfolio_lite_site_tagline', array(
 			'label'			=> esc_html__( 'Display Site Tagline', 'portfolio-lite' ),
 			'type'			=> 'checkbox',
 			'section'		=> 'title_tagline',
-			'settings'	=> 'header_text',
+			'settings'	=> 'portfolio_lite_site_tagline',
 			'priority'	=> 15,
 		) ) );
 
@@ -160,58 +160,6 @@ function portfolio_lite_theme_customizer( $wp_customize ) {
 			),
 			'priority' => 20,
 		) ) );
-
-		/*
-		-------------------------------------------------------------------------------------------------------
-			Layout Options
-		-------------------------------------------------------------------------------------------------------
-		*/
-
-		$wp_customize->add_section( 'portfolio_lite_layout_section' , array(
-			'title'			=> esc_html__( 'Layout', 'portfolio-lite' ),
-			'description' => esc_html__( 'Toggle the display and layout of various elements throughout the theme.', 'portfolio-lite' ),
-			'priority'	=> 104,
-			'panel'			=> 'portfolio_lite_theme_options',
-		) );
-
-		// Project Columns Option.
-		$wp_customize->add_setting( 'project_columns', array(
-			'default' => 'two',
-			'sanitize_callback' => 'portfolio_lite_sanitize_columns',
-		) );
-		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'project_columns', array(
-			'label' => esc_html__( 'Portfolio Project Columns', 'portfolio-lite' ),
-			'section' => 'portfolio_lite_layout_section',
-			'settings' => 'project_columns',
-			'type' => 'radio',
-			'choices' => array(
-				'one' 		=> esc_html__( 'One Column', 'portfolio-lite' ),
-				'two' 		=> esc_html__( 'Two Columns', 'portfolio-lite' ),
-				'three' 	=> esc_html__( 'Three Columns', 'portfolio-lite' ),
-				'four' 		=> esc_html__( 'Four Columns', 'portfolio-lite' ),
-			),
-			'priority' => 40,
-		) ) );
-
-		// Project Columns Option.
-		$wp_customize->add_setting( 'testimonial_columns', array(
-			'default' => 'four',
-			'sanitize_callback' => 'portfolio_lite_sanitize_columns',
-		) );
-		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'testimonial_columns', array(
-			'label' => esc_html__( 'Testimonial Columns', 'portfolio-lite' ),
-			'section' => 'portfolio_lite_layout_section',
-			'settings' => 'testimonial_columns',
-			'type' => 'radio',
-			'choices' => array(
-				'two' 		=> esc_html__( 'Two Columns', 'portfolio-lite' ),
-				'three' 	=> esc_html__( 'Three Columns', 'portfolio-lite' ),
-				'four' 		=> esc_html__( 'Four Columns', 'portfolio-lite' ),
-				'five' 		=> esc_html__( 'Five Columns', 'portfolio-lite' ),
-			),
-			'priority' => 60,
-		) ) );
-
 }
 add_action( 'customize_register', 'portfolio_lite_theme_customizer' );
 

@@ -49,7 +49,7 @@
 	/**
 	 * Real-time preview of the site tagline.
 	 */
-	wp.customize( 'header_text', function( value ) {
+	wp.customize( 'portfolio_lite_site_tagline', function( value ) {
 		value.bind( function( to ) {
 			if ( '1' != to ) {
 				$( '.site-description' ).css( {

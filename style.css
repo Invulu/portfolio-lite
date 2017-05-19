@@ -2,7 +2,7 @@
 
 	Theme Name: Portfolio Lite
 	Theme URI: http://organicthemes.com/theme/portfolio/
-	Description: A minimally designed theme framework for WordPress. Created by Organic Themes.
+	Description: Portfolio Lite is a professional, modern and minimal portfolio theme for artists, designers, photographers and creatives. The theme features a slideshow page template that creates a slideshow from the first WordPress image gallery added to the content. The slideshow is centered vertically and horizontally in the browser window. Additionally, categories are displayed in a multi-column portfolio layout. Created by Organic Themes.
 	Author: Organic Themes
 	Author URI: http://organicthemes.com
 	License: GNU General Public License v2 or later
@@ -10,7 +10,7 @@
 	Version: 1.0.1
 	Text Domain: portfolio-lite
 	Domain Path: /languages/
-	Tags: one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, featured-images, featured-image-header, flexible-header, full-width-template, translation-ready, sticky-post, threaded-comments, editor-style, theme-options
+	Tags: portfolio, photography, blog, one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, custom-logo, featured-images, featured-image-header, flexible-header, full-width-template, translation-ready, sticky-post, threaded-comments, editor-style, theme-options
 
 	The CSS, XHTML and Design are released under the GPL:
 	http://www.opensource.org/licenses/gpl-license.php
@@ -2105,9 +2105,6 @@ input[type=submit]:hover, #submit:hover, input#submit:hover, input.button:hover,
 	cursor: pointer;
 	outline: none;
 	border-color: #000000;
-}
-p a.more-link {
-	margin-top: 24px;
 }
 
 /************************************************

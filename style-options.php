@@ -2,7 +2,7 @@
 
 	<?php
 		$display_title = get_theme_mod( 'portfolio_lite_site_title', '1' );
-		$display_tagline = get_theme_mod( 'header_text', '1' );
+		$display_tagline = get_theme_mod( 'portfolio_lite_site_tagline', '1' );
 	?>
 
 	.slideout-panel, #wrapper .post-date p {

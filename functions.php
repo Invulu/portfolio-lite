@@ -50,7 +50,6 @@ if ( ! function_exists( 'portfolio_lite_setup' ) ) :
 			'width'       => 360,
 			'flex-height' => true,
 			'flex-width'  => true,
-			'header-text' => array( 'site-title' ),
 		) );
 
 		/*
@@ -199,7 +198,7 @@ if ( ! function_exists( 'portfolio_lite_enqueue_scripts' ) ) {
 
 		// Load Flexslider on front page and slideshow page template.
 		if ( is_single() || is_page_template( 'template-slideshow-gallery.php' ) ) {
-			wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', array( 'jquery' ), '20130729' );
+			wp_enqueue_script( 'jquery-flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', array( 'jquery' ), '20130729' );
 		}
 
 		// Load single scripts only on single pages.
@@ -391,33 +390,25 @@ endif; // Ends check for portfolio_lite_comment().
 */
 
 /**
- * Adds a custom excerpt length.
+ * Replaces "[...]" (appended to automatically generated excerpts) with ... and
+ * a 'Continue reading' link.
  *
- * @param array $length Excerpt word count.
- * @return array
- */
-
-if ( ! function_exists( 'portfolio_lite_excerpt_length' ) ) :
-
-function portfolio_lite_excerpt_length( $length ) {
-	return 38;
-}
-endif;
-add_filter( 'excerpt_length', 'portfolio_lite_excerpt_length', 999 );
-
-/**
- * Return custom read more link text for the excerpt.
+ * @since Portfolio Lite 1.0
  *
- * @param array $more is the excerpt more link.
- * @return array
+ * @return string 'Continue reading' link prepended with an ellipsis.
  */
+function portfolio_lite_excerpt_more( $link ) {
+	if ( is_admin() ) {
+		return $link;
+	}
 
-if ( ! function_exists( 'portfolio_lite_excerpt_more' ) ) :
-
-function portfolio_lite_excerpt_more( $more ) {
-	return '... <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">'. esc_html__( 'Read More', 'portfolio-lite' ) .'</a>';
+	$link = sprintf( '<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
+		esc_url( get_permalink( get_the_ID() ) ),
+		/* translators: %s: Name of current post */
+		sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'portfolio-lite' ), get_the_title( get_the_ID() ) )
+	);
+	return ' &hellip; ' . $link;
 }
-endif;
 add_filter( 'excerpt_more', 'portfolio_lite_excerpt_more' );
 
 /*
@@ -521,7 +512,7 @@ function portfolio_lite_body_class( $classes ) {
 		$classes[] = 'portfolio-no-title';
 	}
 
-	if ( '' != get_theme_mod( 'header_text', '1' ) ) {
+	if ( '' != get_theme_mod( 'portfolio_lite_site_tagline', '1' ) ) {
 		$classes[] = 'portfolio-has-desc';
 	} else {
 		$classes[] = 'portfolio-no-desc';

@@ -1,0 +1,481 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Portfolio Lite\n"
+"POT-Creation-Date: 2017-05-18 22:55-1000\n"
+"PO-Revision-Date: 2017-05-18 22:55-1000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:67
+msgid "Not Found, Error 404"
+msgstr ""
+
+#: 404.php:68
+msgid "The page you are looking for no longer exists."
+msgstr ""
+
+#: comments.php:19
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: comments.php:40
+#, php-format
+msgid "One Comment on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#: comments.php:42
+#, php-format
+msgid "%1$s Comments on &ldquo;%2$s&rdquo;"
+msgstr ""
+
+#: comments.php:49
+msgid "Comment Navigation"
+msgstr ""
+
+#: comments.php:50 comments.php:72
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:51 comments.php:73
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:71
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:85
+msgid "Comments are closed."
+msgstr ""
+
+#: content/author-page.php:28
+msgid "Website:"
+msgstr ""
+
+#: content/author-page.php:29
+msgid "Link to author page"
+msgstr ""
+
+#: content/author-page.php:34
+msgid "Profile:"
+msgstr ""
+
+#: content/author-page.php:40
+#, php-format
+msgid "Posts by %1$s:"
+msgstr ""
+
+#: content/author-page.php:49 content/loop-archive.php:65
+#: content/loop-blog.php:64 content/loop-cat.php:50
+msgid "Previous Page"
+msgstr ""
+
+#: content/author-page.php:50 content/loop-archive.php:66
+#: content/loop-blog.php:65 content/loop-cat.php:51
+msgid "Next Page"
+msgstr ""
+
+#: content/author-page.php:54
+msgid "No posts by this author."
+msgstr ""
+
+#: content/content-none.php:14
+msgid "No Results Found"
+msgstr ""
+
+#: content/content-none.php:15
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching will help."
+msgstr ""
+
+#: content/loop-archive.php:26 content/loop-blog.php:29
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: content/loop-archive.php:35
+msgid "Tags:"
+msgstr ""
+
+#: content/loop-archive.php:44 content/loop-blog.php:41
+#: content/loop-post.php:49
+msgid "by"
+msgstr ""
+
+#: content/loop-archive.php:48 content/loop-blog.php:45
+msgid "Leave a Comment"
+msgstr ""
+
+#: content/loop-archive.php:48 content/loop-blog.php:45
+msgid "1 Comment"
+msgstr ""
+
+#: content/loop-blog.php:34 content/loop-page.php:23 functions.php:418
+msgid "Read More"
+msgstr ""
+
+#: content/loop-page.php:26 content/loop-post.php:30
+msgid "Pages:"
+msgstr ""
+
+#: content/loop-page.php:31 content/loop-post.php:35
+msgid "Next"
+msgstr ""
+
+#: content/loop-page.php:32 content/loop-post.php:36
+msgid "Previous"
+msgstr ""
+
+#: content/loop-page.php:38 content/loop-post.php:50 functions.php:376
+msgid "(Edit)"
+msgstr ""
+
+#: content/slider-gallery.php:50
+msgid "1"
+msgstr ""
+
+#: content/slider-gallery.php:50
+msgid "/"
+msgstr ""
+
+#: customizer/customizer-controls.php:27
+msgid "&mdash; Select &mdash;"
+msgstr ""
+
+#: customizer/customizer-sanitize.php:49 customizer/customizer.php:134
+msgid "2 Seconds"
+msgstr ""
+
+#: customizer/customizer-sanitize.php:50 customizer/customizer.php:135
+msgid "4 Seconds"
+msgstr ""
+
+#: customizer/customizer-sanitize.php:51 customizer/customizer.php:136
+msgid "6 Seconds"
+msgstr ""
+
+#: customizer/customizer-sanitize.php:52 customizer/customizer.php:137
+msgid "8 Seconds"
+msgstr ""
+
+#: customizer/customizer-sanitize.php:53 customizer/customizer.php:138
+msgid "10 Seconds"
+msgstr ""
+
+#: customizer/customizer-sanitize.php:54 customizer/customizer.php:139
+msgid "12 Seconds"
+msgstr ""
+
+#: customizer/customizer-sanitize.php:55 customizer/customizer.php:140
+msgid "20 Seconds"
+msgstr ""
+
+#: customizer/customizer-sanitize.php:56 customizer/customizer.php:141
+msgid "30 Seconds"
+msgstr ""
+
+#: customizer/customizer-sanitize.php:57 customizer/customizer.php:142
+msgid "1 Minute"
+msgstr ""
+
+#: customizer/customizer-sanitize.php:58 customizer/customizer.php:143
+msgid "Hold Frame"
+msgstr ""
+
+#: customizer/customizer-sanitize.php:76 customizer/customizer.php:158
+msgid "Fade"
+msgstr ""
+
+#: customizer/customizer-sanitize.php:77 customizer/customizer.php:159
+msgid "Slide"
+msgstr ""
+
+#: customizer/customizer-sanitize.php:95 customizer/customizer.php:188
+msgid "One Column"
+msgstr ""
+
+#: customizer/customizer-sanitize.php:96 customizer/customizer.php:189
+#: customizer/customizer.php:207
+msgid "Two Columns"
+msgstr ""
+
+#: customizer/customizer-sanitize.php:97 customizer/customizer.php:190
+#: customizer/customizer.php:208
+msgid "Three Columns"
+msgstr ""
+
+#: customizer/customizer-sanitize.php:98 customizer/customizer.php:191
+#: customizer/customizer.php:209
+msgid "Four Columns"
+msgstr ""
+
+#: customizer/customizer-sanitize.php:99 customizer/customizer.php:210
+msgid "Five Columns"
+msgstr ""
+
+#: customizer/customizer-sanitize.php:117
+msgid "Left Align"
+msgstr ""
+
+#: customizer/customizer-sanitize.php:118
+msgid "Center Align"
+msgstr ""
+
+#: customizer/customizer-sanitize.php:119
+msgid "Right Align"
+msgstr ""
+
+#: customizer/customizer.php:76
+msgid "Display Site Title"
+msgstr ""
+
+#: customizer/customizer.php:90
+msgid "Display Site Tagline"
+msgstr ""
+
+#: customizer/customizer.php:107
+msgid "Theme Options"
+msgstr ""
+
+#: customizer/customizer.php:108
+msgid "This panel allows you to customize specific areas of the theme."
+msgstr ""
+
+#: customizer/customizer.php:118
+msgid "Slideshow Settings"
+msgstr ""
+
+#: customizer/customizer.php:119
+msgid "Options for changing the slideshow transition time and style."
+msgstr ""
+
+#: customizer/customizer.php:131
+msgid "Transition Interval"
+msgstr ""
+
+#: customizer/customizer.php:155
+msgid "Transition Style"
+msgstr ""
+
+#: customizer/customizer.php:171
+msgid "Layout"
+msgstr ""
+
+#: customizer/customizer.php:172
+msgid "Toggle the display and layout of various elements throughout the theme."
+msgstr ""
+
+#: customizer/customizer.php:183
+msgid "Portfolio Project Columns"
+msgstr ""
+
+#: customizer/customizer.php:202
+msgid "Testimonial Columns"
+msgstr ""
+
+#: footer.php:34
+msgid "Copyright"
+msgstr ""
+
+#: footer.php:34
+msgid "Y"
+msgstr ""
+
+#: footer.php:34
+msgid "All Rights Reserved"
+msgstr ""
+
+#: footer.php:35
+#, php-format
+msgid "%1$s by %2$s"
+msgstr ""
+
+#: functions.php:60
+msgid "Main Menu"
+msgstr ""
+
+#: functions.php:61
+msgid "Slide Menu"
+msgstr ""
+
+#: functions.php:62
+msgid "Social Menu"
+msgstr ""
+
+#: functions.php:63
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:73
+msgid "Default Custom Header"
+msgstr ""
+
+#: functions.php:106
+msgid "Portfolio Lite Theme"
+msgstr ""
+
+#: functions.php:107
+msgid "My <b>Awesome</b> Organic Theme"
+msgstr ""
+
+#: functions.php:120
+msgid "Services"
+msgstr ""
+
+#: functions.php:121
+msgid ""
+"<p>This is an example services page. You may want to write about the various "
+"services your company provides.</p>"
+msgstr ""
+
+#: functions.php:133
+msgid "Logo"
+msgstr ""
+
+#: functions.php:137
+msgid "About Image"
+msgstr ""
+
+#: functions.php:141
+msgid "Services Image"
+msgstr ""
+
+#: functions.php:145
+msgid "Contact Image"
+msgstr ""
+
+#: functions.php:153
+msgid "Primary Navigation"
+msgstr ""
+
+#: functions.php:247
+msgid "Default Sidebar"
+msgstr ""
+
+#: functions.php:255
+msgid "Blog Sidebar"
+msgstr ""
+
+#: functions.php:277
+#, php-format
+msgid "<span class=\"%1$s\">Updated:</span> %2$s"
+msgstr ""
+
+#: functions.php:286
+#, php-format
+msgid "<span class=\"%1$s\">Posted:</span> %2$s"
+msgstr ""
+
+#: functions.php:336
+msgid "Pingback:"
+msgstr ""
+
+#: functions.php:336
+msgid "Edit"
+msgstr ""
+
+#. translators: 1: comment author, 2: date and time
+#: functions.php:354
+#, php-format
+msgid "%1$s %2$s"
+msgstr ""
+
+#. translators: 1: date, 2: time
+#: functions.php:360
+#, php-format
+msgid "%1$s, %2$s"
+msgstr ""
+
+#: functions.php:369
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:374
+msgid "Reply"
+msgstr ""
+
+#: includes/typefaces.php:23
+msgctxt "Raleway font: on or off"
+msgid "on"
+msgstr ""
+
+#: includes/typefaces.php:24
+msgctxt "Roboto font: on or off"
+msgid "on"
+msgstr ""
+
+#: includes/typefaces.php:25
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr ""
+
+#: includes/typefaces.php:26
+msgctxt "Montserrat font: on or off"
+msgid "on"
+msgstr ""
+
+#: includes/typefaces.php:27
+msgctxt "Droid Serif font: on or off"
+msgid "on"
+msgstr ""
+
+#: includes/typefaces.php:28
+msgctxt "Cabin font: on or off"
+msgid "on"
+msgstr ""
+
+#: includes/typefaces.php:29
+msgctxt "Lato font: on or off"
+msgid "on"
+msgstr ""
+
+#: searchform.php:12
+msgid "Search"
+msgstr ""
+
+#: searchform.php:13
+msgid "Search &hellip;"
+msgstr ""
+
+#: searchform.php:14
+msgid "Go"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Portfolio Lite"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://organicthemes.com/theme/portfolio/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"A minimally designed theme framework for WordPress. Created by Organic "
+"Themes."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Organic Themes"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://organicthemes.com"
+msgstr ""
