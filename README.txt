@@ -1,6 +1,6 @@
 === Portfolio Lite ===
 
-Version: 1.0.1
+Version: 1.0.2
 Contributors: organicthemes, itsdavidmorgan
 Tags: portfolio, photography, blog, one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, custom-logo, featured-images, featured-image-header, flexible-header, full-width-template, translation-ready, sticky-post, threaded-comments, editor-style, theme-options
 Requires at least: 4.7
@@ -42,12 +42,12 @@ GNU General Public License for more details.
 * close.svg: Created by David Morgan, http://dav.idmorgan.com. License: GPLv2.
 * menu.png: Created by David Morgan, http://dav.idmorgan.com. License: GPLv2.
 * screenshot.png: Created by David Morgan, http://dav.idmorgan.com. License: GPLv2.
-* Image in screenshot: Source: Unsplash, https://unsplash.com/search/street-art?photo=bq-1seg1cPI. License: Creative Commons Zero license, https://unsplash.com/license.
-* default-header.jpg: Source: Unsplash, https://unsplash.com/search/draw?photo=Rb_wkrNoMnA. License: Creative Commons Zero license, https://unsplash.com/license.
-* default-image.jpg: Source: Unsplash, https://unsplash.com/search/artist?photo=UmWW77lYEcA. License: Creative Commons Zero license, https://unsplash.com/license.
-* image-about.jpg: Source: Unsplash, https://unsplash.com/search/artist?photo=BHNxfaeNCTI. License: Creative Commons Zero license, https://unsplash.com/license.
-* image-services.jpg: Source: Unsplash, https://unsplash.com/search/desk?photo=JWiMShWiF14. License: Creative Commons Zero license, https://unsplash.com/license.
-* image-contact.jpg: Source: Unsplash, https://unsplash.com/search/desk?photo=SP3J_BJeQqE. License: Creative Commons Zero license, https://unsplash.com/license.
+* Image in screenshot: Source: Unsplash, https://unsplash.com/photos/bq-1seg1cPI. License: Creative Commons Zero license, https://unsplash.com/license.
+* default-header.jpg: Source: Unsplash, https://unsplash.com/photos/Rb_wkrNoMnA. License: Creative Commons Zero license, https://unsplash.com/license.
+* default-image.jpg: Source: Unsplash, https://unsplash.com/photos/UmWW77lYEcA. License: Creative Commons Zero license, https://unsplash.com/license.
+* image-about.jpg: Source: Unsplash, https://unsplash.com/photos/BHNxfaeNCTI. License: Creative Commons Zero license, https://unsplash.com/license.
+* image-services.jpg: Source: Unsplash, https://unsplash.com/photos/JWiMShWiF14. License: Creative Commons Zero license, https://unsplash.com/license.
+* image-contact.jpg: Source: Unsplash, https://unsplash.com/photos/SP3J_BJeQqE. License: Creative Commons Zero license, https://unsplash.com/license.
 
 == Font Awesome ==
 
@@ -62,6 +62,15 @@ GNU General Public License for more details.
 * jquery.flexslider.js, Licensed under GPLv2 or later.
 
 == Changelog ==
+
+== 1.0.2 ==
+* Updated Theme URI link in stylesheet
+* Updated credit link in footer.php
+* Updated photo URLs in readme file
+* Replaced style-options.php in favor of wp_head hook in functions
+* Simplified index.php loop
+* Removed escaping from get_search_query()
+* Replaced get_template_part() for search form with get_search_form()
 
 == 1.0.1 ==
 * Added defaults to body class conditionals

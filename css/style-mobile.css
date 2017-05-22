@@ -159,6 +159,9 @@
 	.portfolio-slideshow .container {
 		display: block;
 	}
+	.portfolio-slideshow .container {
+		margin-top: 0px;
+	}
 	.portfolio-slideshow #wrapper {
 		height: auto;
 	}

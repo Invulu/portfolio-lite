@@ -8,14 +8,7 @@
 
 ?>
 
-<?php
-	$wp_query = new WP_Query( array(
-		'category_name' => 'blog',
-		'suppress_filters'	=> 0,
-	) );
-?>
-
-<?php if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 	<!-- BEGIN .post class -->
 	<div <?php post_class( 'blog-holder' ); ?> id="post-<?php the_ID(); ?>">

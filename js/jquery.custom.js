@@ -44,6 +44,10 @@
 					slider.removeClass('loading');
 					$('.preloader').hide();
 					$('.total-slides').text(slider.count);
+					$('.slides li .feature-img').click(function(event){
+						event.preventDefault();
+						slider.flexAnimate(slider.getTarget("next"));
+					});
 				},
 				after: function(slider) {
 					$('.current-slide').text(slider.currentSlide+1);

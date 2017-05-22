@@ -211,6 +211,51 @@ add_action( 'wp_enqueue_scripts', 'portfolio_lite_enqueue_scripts' );
 
 /*
 -------------------------------------------------------------------------------------------------------
+	Custom Styles
+-------------------------------------------------------------------------------------------------------
+*/
+
+/**
+ * Changes styles upon user defined options.
+ */
+function portfolio_lite_custom_styles() {
+	$bg_color = get_theme_mod( 'background_color', '#ffffff' );
+	$display_title = get_theme_mod( 'portfolio_lite_site_title', '1' );
+	$display_tagline = get_theme_mod( 'portfolio_lite_site_tagline', '1' );
+	?>
+	<style>
+		.slideout-panel, #wrapper .post-date p {
+			background-color: #<?php echo esc_attr( $bg_color ); ?>;
+		}
+		#wrapper .site-title {
+			<?php
+			if ( '1' != $display_title ) {
+				echo
+				'position: absolute;
+				text-indent: -9999px;
+				margin: 0px;
+				padding: 0px;';
+			};
+			?>
+		}
+		#wrapper .site-description {
+			<?php
+			if ( '1' != $display_tagline ) {
+				echo
+				'position: absolute;
+				text-indent: -9999px;
+				margin: 0px;
+				padding: 0px;';
+			};
+			?>
+		}
+	</style>
+	<?php
+}
+add_action( 'wp_head', 'portfolio_lite_custom_styles', 100 );
+
+/*
+-------------------------------------------------------------------------------------------------------
 	Category ID to Name
 -------------------------------------------------------------------------------------------------------
 */
