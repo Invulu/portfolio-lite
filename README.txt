@@ -1,6 +1,6 @@
 === Portfolio Lite ===
 
-Version: 1.0.2
+Version: 1.0.3
 Contributors: organicthemes, itsdavidmorgan
 Tags: portfolio, photography, blog, one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, custom-logo, featured-images, featured-image-header, flexible-header, full-width-template, translation-ready, sticky-post, threaded-comments, editor-style, theme-options
 Requires at least: 4.7
@@ -11,6 +11,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 == Description ==
 
 Portfolio Lite is a professional, modern and minimal portfolio theme for artists, designers, photographers and creatives. The theme features a slideshow page template that creates a slideshow from the first WordPress image gallery added to the content. The slideshow is centered vertically and horizontally in the browser window. Additionally, categories are displayed in a multi-column portfolio layout.
+
+== Instructions ==
+
+Theme Demo: https://organicthemes.com/demo/portfolio-lite/
+Portfolio and Slideshow Instructions: https://organicthemes.com/the-free-wordpress-portfolio-lite-theme/
+Support Forum: https://wordpress.org/support/theme/portfolio-lite
 
 == Installation ==
 
@@ -62,6 +68,10 @@ GNU General Public License for more details.
 * jquery.flexslider.js, Licensed under GPLv2 or later.
 
 == Changelog ==
+
+== 1.0.3 ==
+* Added links to instructions and demo in readme in theme description
+* Minor JS tweak
 
 == 1.0.2 ==
 * Updated Theme URI link in stylesheet

@@ -64,6 +64,9 @@
 			$('.icon-menu-close').toggle();
 		});
 
+		/* Insert Line Break Before More Links ---------------------*/
+		$('<br />').insertBefore('.content .more-link');
+
 		/* Animate Page Scroll ---------------------*/
 		$('.scroll').click(function(event){
 			event.preventDefault();
