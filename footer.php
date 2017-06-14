@@ -11,7 +11,7 @@
 
 <?php if ( ! is_single() ) { ?>
 
-<!-- END .thirteen columns -->
+<!-- END .twelve columns -->
 </div>
 
 <?php } ?>

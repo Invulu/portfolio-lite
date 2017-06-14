@@ -7,7 +7,7 @@
 	Author URI: https://organicthemes.com
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.0.4
+	Version: 1.0.5
 	Text Domain: portfolio-lite
 	Domain Path: /languages/
 	Tags: portfolio, photography, blog, one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, custom-logo, featured-images, featured-image-header, flexible-header, full-width-template, translation-ready, sticky-post, threaded-comments, editor-style, theme-options
@@ -79,7 +79,7 @@ body.wp-autoresize .content {
 ************************************************/
 
 p {
-	padding: 18px 0px;
+	padding: 16px 0px;
 	margin: 0px;
 }
 p:empty {
@@ -385,6 +385,7 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 	text-align: right;
 	padding-right: 48px;
 	padding-bottom: 48px;
+	padding-left: 24px;
 }
 #header.top-header .site-logo {
 	padding: 24px;
@@ -679,7 +680,7 @@ ul.menu li li a::after {
 	align-content: stretch;
 	justify-content: space-between;
 	width: 100%;
-	max-width: 1180px;
+	max-width: 1260px;
 	margin: -72px auto 0px;
 }
 .portfolio-not-single .container {
@@ -736,13 +737,11 @@ ul.menu li li a::after {
 	margin-bottom: 0px;
 }
 .post-intro .excerpt {
-	margin-top: 24px;
+	margin-top: 12px;
 }
-.cat-intro {
-	margin-bottom: 12px;
-}
+.cat-intro,
 .cat-intro .headline {
-	margin-bottom: 0px;
+	margin-bottom: 12px;
 }
 .article {
 	display: block;
@@ -794,6 +793,8 @@ ul.menu li li a::after {
 	font-weight: 300;
 	line-height: 1.6;
 }
+.article h1:first-child + p,
+.article h2:first-child + p,
 .article > p:first-child,
 .article span + p {
 	padding-top: 0px;
@@ -1174,9 +1175,9 @@ body.portfolio-landing-page {
 	-webkit-backface-visibility: hidden;
 }
 .feature-img:hover .bg-img {
-	transform: scale(1.2);
-	-webkit-transform: scale(1.2);
-	-ms-transform: scale(1.2);
+	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-ms-transform: scale(1.1);
 	-webkit-backface-visibility: hidden;
 }
 .blog .feature-img {
@@ -1186,6 +1187,7 @@ body.portfolio-landing-page {
 	display: block;
 	width: 100%;
 	height: 100%;
+	max-height: 580px;
 	align-self: stretch;
 	position: relative;
 	background-position: center center;
