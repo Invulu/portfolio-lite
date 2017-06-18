@@ -7,17 +7,34 @@
 body.dark {
 	color: #cccccc;
 	color: rgba(255, 255, 255, 0.7);
-	border-color: rgba(255, 255, 255, 0.12);
+	border-color: rgba(255, 255, 255, 0.24);
 }
 .dark h1, .dark h2, .dark h3,
 .dark h4, .dark h5, .dark h6 {
 	color: #ffffff;
-	border-color: rgba(255, 255, 255, 0.12);
+	border-color: rgba(255, 255, 255, 0.24);
+}
+.dark h1 a, .dark h2 a, .dark h3 a, .dark h4 a, .dark h5 a, .dark h6 a,
+.dark h1 a:link, .dark h2 a:link, .dark h3 a:link, .dark h4 a:link, .dark h5 a:link, .dark h6 a:link,
+.dark h1 a:visited, .dark h2 a:visited, .dark h3 a:visited, .dark h4 a:visited, .dark h5 a:visited, .dark h6 a:visited {
+	color: #ffffff;
+}
+.dark h1 a:hover, .dark h2 a:hover, .dark h3 a:hover, .dark h4 a:hover, .dark h5 a:hover, .dark h6 a:hover,
+.dark h1 a:focus, .dark h2 a:focus, .dark h3 a:focus, .dark h4 a:focus, .dark h5 a:focus, .dark h6 a:focus,
+.dark h1 a:active, .dark h2 a:active, .dark h3 a:active, .dark h4 a:active, .dark h5 a:active, .dark h6 a:active {
+	color: #3399cc;
 }
 .dark blockquote,
 .dark .headline {
 	color: #ffffff;
 	border-color: #ffffff;
+}
+.dark .excerpt p:first-child,
+.dark .article h1:first-child + p,
+.dark .article h2:first-child + p,
+.dark .article h2:first-child + .feature-img + p,
+.dark .article > p:first-child {
+	color: #ffffff;
 }
 
 /* Header Color Brightness */
@@ -33,12 +50,13 @@ body.dark {
 .dark .top-navigation,
 .dark #masthead.full-width,
 .dark.portfolio-not-single.portfolio-no-img.portfolio-has-desc #masthead,
-.dark.portfolio-not-single.portfolio-no-img.portfolio-has-title #masthead  {
-	border-color: rgba(255, 255, 255, 0.12);
+.dark.portfolio-not-single.portfolio-no-img.portfolio-has-title #masthead,
+.dark .site-title-slideshow .title  {
+	border-color: rgba(255, 255, 255, 0.24);
 }
 .dark .social-icons li a {
 	color: rgba(255, 255, 255, 0.3);
-	border-color: rgba(255, 255, 255, 0.12);
+	border-color: rgba(255, 255, 255, 0.24);
 }
 .dark .social-icons li a:hover {
 	color: #ffffff;
@@ -47,7 +65,7 @@ body.dark {
 /* Content Color Brightness */
 
 .dark .content .five.columns {
-	border-color: rgba(255, 255, 255, 0.12);
+	border-color: rgba(255, 255, 255, 0.24);
 }
 .dark .flexslider .title,
 .dark .flexslider .title a,
@@ -79,19 +97,13 @@ body.dark {
 }
 .dark .next-post,
 .dark .flex-direction-nav .flex-next {
-	border-color: rgba(255, 255, 255, 0.12);
+	border-color: rgba(255, 255, 255, 0.24);
 }
 .dark .flexslider .preloader {
 	border-bottom-color: rgba(255, 255, 255, 0.12);
 	border-left-color: rgba(255, 255, 255, 0.12);
 	border-right-color: rgba(255, 255, 255, 0.4);
 	border-top-color: rgba(255, 255, 255, 0.4);
-}
-.dark .excerpt p:first-child,
-.dark .article h1:first-child + p,
-.dark .article > p:first-child,
-.dark .article span + p {
-	color: #ffffff;
 }
 .dark article.comment,
 .dark .testimonial .information,
@@ -106,11 +118,11 @@ body.dark {
 .dark .post-meta::before,
 .dark .blog-holder .article,
 .dark .archive-holder .article {
-	border-color: rgba(255, 255, 255, 0.12);
+	border-color: rgba(255, 255, 255, 0.24);
 }
 .dark .post-taxonomy a {
 	color: rgba(255, 255, 255, 0.4) !important;
-	border-color: rgba(255, 255, 255, 0.12);
+	border-color: rgba(255, 255, 255, 0.24);
 }
 .dark .post-taxonomy a:hover {
 	color: #ffffff !important;
@@ -121,19 +133,20 @@ body.dark {
 .dark button, .dark .button, .dark a.button, .dark .reply a, .dark #searchsubmit,
 .dark #prevLink a, .dark #nextLink a, .dark a.more-link, .dark #submit,
 .dark input[type=submit], .dark input#submit, .dark input.button, .dark #wrapper #infinite-handle span {
-	color: rgba(255, 255, 255, 0.4) !important;
+	color: rgba(255, 255, 255, 0.5) !important;
 }
 .dark button:hover, .dark .button:hover, .dark a.button:hover, .dark .reply a:hover,
 .dark #searchsubmit:hover, .dark #prevLink a:hover, .dark #nextLink a:hover, .dark a.more-link:hover,
 .dark input[type=submit]:hover, .dark #submit:hover, .dark input#submit:hover, .dark input.button:hover,
 .dark #wrapper #infinite-handle span:hover {
 	color: #ffffff !important;
+	border-color: #ffffff !important;
 }
 
 /* Footer Color Brightness */
 
 .dark .footer {
-	border-color: rgba(255, 255, 255, 0.12);
+	border-color: rgba(255, 255, 255, 0.24);
 }
 .dark .footer-information p {
 	color: rgba(255, 255, 255, 0.4);
@@ -161,7 +174,7 @@ body.dark {
 .dark ul.menu li li a:link,
 .dark ul.menu li li a:visited,
 .dark .footer-menu ul.menu li {
-	border-color: rgba(255, 255, 255, 0.12);
+	border-color: rgba(255, 255, 255, 0.24);
 }
 .dark button.menu-toggle svg {
 	fill: rgba(255, 255, 255, 0.6);
