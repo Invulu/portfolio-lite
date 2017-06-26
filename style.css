@@ -7,7 +7,7 @@
 	Author URI: https://organicthemes.com
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.0.6
+	Version: 1.0.7
 	Text Domain: portfolio-lite
 	Domain Path: /languages/
 	Tags: portfolio, photography, blog, one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, custom-logo, featured-images, featured-image-header, flexible-header, full-width-template, translation-ready, sticky-post, threaded-comments, editor-style, theme-options
@@ -159,7 +159,7 @@ blockquote {
 	color: #000000;
 	font-size: 1.6em;
 	font-weight: 600;
-	line-height: 1.5;
+	line-height: 1.4;
 	margin: 24px 0px 24px -24px;
 	padding: 12px 24px;
 	border-left: 3px solid #000000;
@@ -375,11 +375,6 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 	display: block;
 	overflow: hidden;
 }
-.portfolio-has-logo #header.top-header {
-	display: flex;
-	align-content: center;
-	justify-content: space-between;
-}
 #header.side-header {
 	align-self: center;
 	text-align: right;
@@ -388,7 +383,7 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 	padding-left: 24px;
 }
 #header.top-header .site-logo {
-	padding: 24px;
+	padding: 12px;
 }
 #custom-header {
 	display: block;
@@ -424,22 +419,6 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 	margin: 0px;
 	padding: 0px;
 }
-.portfolio-header-inactive #masthead.full-width,
-.error404.portfolio-header-inactive.portfolio-has-desc #masthead,
-.error404.portfolio-header-inactive.portfolio-has-title #masthead,
-.blog.portfolio-header-inactive.portfolio-has-desc #masthead,
-.blog.portfolio-header-inactive.portfolio-has-title #masthead,
-.archive.portfolio-header-inactive.portfolio-has-desc #masthead,
-.archive.portfolio-header-inactive.portfolio-has-title #masthead,
-.search.portfolio-header-inactive.portfolio-has-desc #masthead,
-.search.portfolio-header-inactive.portfolio-has-title #masthead,
-.portfolio-not-single.portfolio-no-img.portfolio-has-desc #masthead,
-.portfolio-not-single.portfolio-no-img.portfolio-has-title #masthead {
-	border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-}
-.portfolio-slideshow #masthead {
-	border: none !important;
-}
 .site-title {
 	float: left;
 	font-size: 1.1em;
@@ -448,7 +427,7 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	margin: 0px;
-	padding: 12px;
+	padding: 12px 0px 12px 12px;
 	word-wrap: break-word;
 }
 .site-title a,
@@ -468,6 +447,7 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 }
 .site-title-slideshow .title {
 	align-self: center;
+	margin: 0px 0px 6px 12px;
 	padding: 0px 12px;
 	border-left: 1px solid rgba(0, 0, 0, 0.12);
 }
@@ -1550,32 +1530,18 @@ html[xmlns] .slides {
 .showcase-category .archive-holder .article p {
 	padding: 8px 0px;
 }
-.showcase-projects,
-.testimonial-posts {
+.showcase-projects {
 	width: calc(100% + 24px);
 	margin-left: -12px;
 }
 .showcase-projects .half:nth-child(2n+1),
 .showcase-projects .third:nth-child(3n+1),
-.showcase-projects .fourth:nth-child(4n+1),
-.testimonial-posts .half:nth-child(2n+1),
-.testimonial-posts .third:nth-child(3n+1),
-.testimonial-posts .fourth:nth-child(4n+1),
-.testimonial-posts .fifth:nth-child(5n+1) {
+.showcase-projects .fourth:nth-child(4n+1) {
 	clear: both;
-}
-.testimonial {
-	margin: 12px;
-	overflow: hidden;
 }
 .project {
 	margin: 0px 12px 24px 12px;
 	overflow: hidden;
-}
-.testimonial .information {
-	background-color: rgba(0, 0, 0, 0.04);
-	text-align: center;
-	padding: 12px 18px;
 }
 .showcase-nav {
 	top: 50%;
@@ -1621,28 +1587,8 @@ html[xmlns] .slides {
 .showcase-nav .next-post a {
 	right: 24px;
 }
-.testimonials .post-edit-link,
 .showcase .post-edit-link {
 	display: none;
-}
-.testimonial p {
-	padding: 12px 0px;
-}
-.testimonial blockquote {
-	font-size: 1.1em;
-	line-height: 1.6;
-	margin: 0px;
-	padding: 0px;
-	border: none;
-}
-.testimonial .author {
-	color: rgba(0, 0, 0, 0.4);
-	font-style: italic;
-	font-size: 1em;
-	padding-bottom: 12px;
-}
-.testimonial .author::before {
-	content: '— ';
 }
 
 /************************************************

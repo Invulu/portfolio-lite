@@ -27,7 +27,7 @@
 <?php $header_image = get_header_image(); ?>
 <?php $blog = is_home(); ?>
 
-<?php if ( ! $slide_pages || wp_is_mobile() ) { ?>
+<?php if ( ! $slide_pages ) { ?>
 
 	<?php if ( has_nav_menu( 'slide-menu' ) ) { ?>
 
@@ -76,8 +76,6 @@
 <!-- BEGIN #wrapper -->
 <div id="wrapper">
 
-	<?php if ( is_single() || wp_is_mobile() ) { ?>
-
 	<!-- BEGIN #header -->
 	<div id="header" class="top-header">
 
@@ -124,8 +122,6 @@
 			<?php } ?>
 
 		</div>
-
-		<?php } ?>
 
 	<!-- END #header -->
 	</div>

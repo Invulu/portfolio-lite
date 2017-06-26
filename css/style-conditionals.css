@@ -106,12 +106,10 @@ body.dark {
 	border-top-color: rgba(255, 255, 255, 0.4);
 }
 .dark article.comment,
-.dark .testimonial .information,
 .dark .showcase-category .archive-holder .title.no-img {
 	background-color: rgba(255, 255, 255, 0.04);
 }
-.dark .post-meta,
-.dark .testimonial .author {
+.dark .post-meta {
 	color: #999999;
 	color: rgba(255, 255, 255, 0.4);
 }
@@ -181,4 +179,35 @@ body.dark {
 }
 .dark button.menu-toggle:hover svg {
 	fill: rgba(255, 255, 255, 1);
+}
+
+/* Header Conditionals */
+
+.portfolio-has-logo #header.top-header {
+	display: flex;
+	align-content: center;
+	justify-content: space-between;
+}
+.portfolio-not-single #header.top-header,
+.portfolio-has-logo.portfolio-not-single #header.top-header {
+	display: none;
+}
+.portfolio-no-logo #header.side-header {
+	padding-top: 48px;
+}
+.portfolio-header-inactive #masthead.full-width,
+.error404.portfolio-header-inactive.portfolio-has-desc #masthead,
+.error404.portfolio-header-inactive.portfolio-has-title #masthead,
+.blog.portfolio-header-inactive.portfolio-has-desc #masthead,
+.blog.portfolio-header-inactive.portfolio-has-title #masthead,
+.archive.portfolio-header-inactive.portfolio-has-desc #masthead,
+.archive.portfolio-header-inactive.portfolio-has-title #masthead,
+.search.portfolio-header-inactive.portfolio-has-desc #masthead,
+.search.portfolio-header-inactive.portfolio-has-title #masthead,
+.portfolio-not-single.portfolio-no-img.portfolio-has-desc #masthead,
+.portfolio-not-single.portfolio-no-img.portfolio-has-title #masthead {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+.portfolio-slideshow #masthead {
+	border: none !important;
 }

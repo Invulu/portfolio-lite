@@ -43,6 +43,11 @@ if ( ! function_exists( 'portfolio_lite_setup' ) ) :
 		add_theme_support( 'title-tag' );
 
 		/*
+		* Enable selective refresh for widgets.
+		*/
+		add_theme_support( 'customize-selective-refresh-widgets' );
+
+		/*
 		* Enable support for custom logo.
 		*/
 		add_theme_support( 'custom-logo', array(
