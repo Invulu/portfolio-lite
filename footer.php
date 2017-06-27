@@ -32,7 +32,7 @@
 
 				<p>
 					<?php esc_html_e( 'Copyright', 'portfolio-lite' ); ?> &copy; <?php echo date( esc_html__( 'Y', 'portfolio-lite' ) ); ?> &middot; <?php esc_html_e( 'All Rights Reserved', 'portfolio-lite' ); ?> &middot;
-					<?php esc_html( bloginfo( 'name' ) ); ?> &middot; <?php printf( esc_html__( '%1$s by %2$s', 'portfolio-lite' ), '<a href="https://organicthemes.com/theme/portfolio-theme/">Portfolio Lite Theme</a>', 'Organic Themes' ); ?>
+					<?php esc_html( bloginfo( 'name' ) ); ?> &middot; <?php printf( esc_html__( '%1$s by %2$s', 'portfolio-lite' ), '<a href="https://organicthemes.com/theme/portfolio-theme/">Portfolio Theme Lite</a>', 'Organic Themes' ); ?>
 				</p>
 
 			</div>
