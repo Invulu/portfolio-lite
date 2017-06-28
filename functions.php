@@ -224,7 +224,7 @@ add_action( 'wp_enqueue_scripts', 'portfolio_lite_enqueue_scripts' );
  * Changes styles upon user defined options.
  */
 function portfolio_lite_custom_styles() {
-	$bg_color = get_theme_mod( 'background_color', '#ffffff' );
+	$bg_color = get_theme_mod( 'background_color', 'ffffff' );
 	$display_title = get_theme_mod( 'portfolio_lite_site_title', '1' );
 	$display_tagline = get_theme_mod( 'portfolio_lite_site_tagline', '1' );
 	?>

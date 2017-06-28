@@ -69,9 +69,19 @@
 	<!-- END #slide-menu -->
 	</nav>
 
+	<?php } else { ?>
+
+	<!-- BEGIN #slide-menu -->
+	<nav id="slide-menu" class="slideout-menu">
+
+		<ul class="menu"><?php wp_list_pages( 'title_li=&depth=4' ); ?></ul>
+
+	<!-- END #slide-menu -->
+	</nav>
+
 	<?php } ?>
 
-<?php } ?>
+<?php } // Endif slide pages. ?>
 
 <!-- BEGIN #wrapper -->
 <div id="wrapper">
@@ -85,8 +95,7 @@
 
 		<?php } ?>
 
-		<?php if ( has_nav_menu( 'social-menu' ) || has_nav_menu( 'main-menu' ) || has_nav_menu( 'slide-menu' ) ) { ?>
-
+		<!-- BEGIN .top-navigation -->
 		<div class="top-navigation">
 
 			<?php if ( has_nav_menu( 'social-menu' ) ) { ?>
@@ -104,29 +113,24 @@
 
 			<?php } ?>
 
-			<?php if ( has_nav_menu( 'main-menu' ) || has_nav_menu( 'slide-menu' ) ) { ?>
+			<button class="menu-toggle">
+				<svg class="icon-menu-open" version="1.1" id="icon-open" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+					<rect y="2" width="24" height="2"/>
+					<rect y="11" width="24" height="2"/>
+					<rect y="20" width="24" height="2"/>
+				</svg>
+				<svg class="icon-menu-close" version="1.1" id="icon-close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+					<rect x="0" y="11" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 12 28.9706)" width="24" height="2"/>
+					<rect x="0" y="11" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 28.9706 12)" width="24" height="2"/>
+				</svg>
+			</button>
 
-				<button class="menu-toggle">
-					<svg class="icon-menu-open" version="1.1" id="icon-open" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-						 width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
-						<rect y="2" width="24" height="2"/>
-						<rect y="11" width="24" height="2"/>
-						<rect y="20" width="24" height="2"/>
-					</svg>
-					<svg class="icon-menu-close" version="1.1" id="icon-close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
-						<rect x="0" y="11" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 12 28.9706)" width="24" height="2"/>
-						<rect x="0" y="11" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 28.9706 12)" width="24" height="2"/>
-					</svg>
-				</button>
-
-			<?php } ?>
-
+		<!-- END .top-navigation -->
 		</div>
 
 	<!-- END #header -->
 	</div>
-
-	<?php } ?>
 
 	<!-- BEGIN #panel -->
 	<main id="panel" class="container clearfix">
