@@ -500,19 +500,40 @@ endif; // Ends check for portfolio_lite_comment().
  *
  * @return string 'Continue reading' link prepended with an ellipsis.
  */
-function portfolio_lite_excerpt_more( $link ) {
+function portfolio_lite_excerpt_more( $more_link ) {
 	if ( is_admin() ) {
-		return $link;
+		return $more_link;
 	}
 
-	$link = sprintf( '<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
+	$more_link = sprintf( '<p class="more-link-wrapper"><a href="%1$s" class="more-link">%2$s</a></p>',
 		esc_url( get_permalink( get_the_ID() ) ),
 		/* translators: %s: Name of current post */
-		sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'portfolio-lite' ), get_the_title( get_the_ID() ) )
+		sprintf( __( 'Continue Reading<span class="screen-reader-text"> "%s"</span>', 'portfolio-lite' ), get_the_title( get_the_ID() ) )
 	);
-	return ' &hellip; ' . $link;
+	return $more_link;
 }
 add_filter( 'excerpt_more', 'portfolio_lite_excerpt_more' );
+
+/**
+ * Adds paragraph wrapper to more tags.
+ *
+ * @since Portfolio Lite 1.0
+ *
+ * @return string 'Continue reading' link prepended with an ellipsis.
+ */
+function portfolio_lite_more_link( $more_link ) {
+	if ( is_admin() ) {
+		return $more_link;
+	}
+
+	$more_link = sprintf( '<p class="more-link-wrapper"><a href="%1$s" class="more-link">%2$s</a></p>',
+		esc_url( get_permalink( get_the_ID() ) ),
+		/* translators: %s: Name of current post */
+		sprintf( __( 'Continue Reading<span class="screen-reader-text"> "%s"</span>', 'portfolio-lite' ), get_the_title( get_the_ID() ) )
+	);
+	return $more_link;
+}
+add_filter( 'the_content_more_link', 'portfolio_lite_more_link', 10, 2 );
 
 /*
 -------------------------------------------------------------------------------------------------------

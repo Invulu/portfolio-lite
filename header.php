@@ -23,65 +23,60 @@
 
 <body <?php body_class(); ?>>
 
-<?php $slide_pages = is_page_template( 'template-slideshow-gallery.php' ); ?>
 <?php $header_image = get_header_image(); ?>
 <?php $blog = is_home(); ?>
 
-<?php if ( ! $slide_pages ) { ?>
+<?php if ( has_nav_menu( 'slide-menu' ) ) { ?>
 
-	<?php if ( has_nav_menu( 'slide-menu' ) ) { ?>
+<!-- BEGIN #slide-menu -->
+<nav id="slide-menu" class="slideout-menu">
 
-	<!-- BEGIN #slide-menu -->
-	<nav id="slide-menu" class="slideout-menu">
+	<?php
+		wp_nav_menu( array(
+			'theme_location'		=> 'slide-menu',
+			'title_li'					=> '',
+			'depth'							=> 2,
+			'fallback_cb'			 	=> 'wp_page_menu',
+			'container_class' 	=> '',
+			'menu_class'				=> 'menu',
+			)
+		);
+	?>
 
-		<?php
-			wp_nav_menu( array(
-				'theme_location'		=> 'slide-menu',
-				'title_li'					=> '',
-				'depth'							=> 2,
-				'fallback_cb'			 	=> 'wp_page_menu',
-				'container_class' 	=> '',
-				'menu_class'				=> 'menu',
-				)
-			);
-		?>
+<!-- END #slide-menu -->
+</nav>
 
-	<!-- END #slide-menu -->
-	</nav>
+<?php } elseif ( has_nav_menu( 'main-menu' ) ) { ?>
 
-	<?php } elseif ( has_nav_menu( 'main-menu' ) ) { ?>
+<!-- BEGIN #slide-menu -->
+<nav id="slide-menu" class="slideout-menu">
 
-	<!-- BEGIN #slide-menu -->
-	<nav id="slide-menu" class="slideout-menu">
+	<?php
+		wp_nav_menu( array(
+			'theme_location'		=> 'main-menu',
+			'title_li'					=> '',
+			'depth'							=> 2,
+			'fallback_cb'			 	=> 'wp_page_menu',
+			'container_class' 	=> '',
+			'menu_class'				=> 'menu',
+			)
+		);
+	?>
 
-		<?php
-			wp_nav_menu( array(
-				'theme_location'		=> 'main-menu',
-				'title_li'					=> '',
-				'depth'							=> 2,
-				'fallback_cb'			 	=> 'wp_page_menu',
-				'container_class' 	=> '',
-				'menu_class'				=> 'menu',
-				)
-			);
-		?>
+<!-- END #slide-menu -->
+</nav>
 
-	<!-- END #slide-menu -->
-	</nav>
+<?php } else { ?>
 
-	<?php } else { ?>
+<!-- BEGIN #slide-menu -->
+<nav id="slide-menu" class="slideout-menu">
 
-	<!-- BEGIN #slide-menu -->
-	<nav id="slide-menu" class="slideout-menu">
+	<ul class="menu"><?php wp_list_pages( 'title_li=&depth=2' ); ?></ul>
 
-		<ul class="menu"><?php wp_list_pages( 'title_li=&depth=4' ); ?></ul>
+<!-- END #slide-menu -->
+</nav>
 
-	<!-- END #slide-menu -->
-	</nav>
-
-	<?php } ?>
-
-<?php } // Endif slide pages. ?>
+<?php } ?>
 
 <!-- BEGIN #wrapper -->
 <div id="wrapper">

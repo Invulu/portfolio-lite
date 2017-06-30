@@ -187,6 +187,9 @@
 	.post-intro .post-navigation {
 		display: none;
 	}
+	.archive-title {
+		margin-top: 36px;
+	}
 	.blog-holder,
 	.archive-holder {
 		margin: 24px 0px;
