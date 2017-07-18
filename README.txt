@@ -1,6 +1,6 @@
 === Portfolio Lite ===
 
-Version: 1.1.1
+Version: 1.1.2.1
 Contributors: organicthemes, itsdavidmorgan
 Tags: portfolio, photography, blog, one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, custom-logo, featured-images, featured-image-header, flexible-header, full-width-template, translation-ready, sticky-post, threaded-comments, editor-style, theme-options
 Requires at least: 4.7
@@ -68,6 +68,14 @@ GNU General Public License for more details.
 * jquery.flexslider.js, Licensed under GPLv2 or later.
 
 == Changelog ==
+
+== 1.1.2.1 ==
+* Fixed textdomain
+
+== 1.1.2 ==
+* Fixed dismissible admin notification
+* Added 'use strict' to jquery.custom.js
+* Added plugin activation recommendations
 
 == 1.1.1 ==
 * Mobile navigation header fix

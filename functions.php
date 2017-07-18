@@ -267,11 +267,11 @@ add_action( 'wp_head', 'portfolio_lite_custom_styles', 100 );
 
 /** Function portfolio_lite_admin_notice */
 function portfolio_lite_admin_notice() {
-	if ( ! PAnD::is_admin_notice_active( 'notice-one-30' ) ) {
+	if ( ! PAnD::is_admin_notice_active( 'notice-portfolio-lite-30' ) ) {
 		return;
 	}
 	?>
-	<div data-dismissible="notice-one-30" class="notice updated is-dismissible">
+	<div data-dismissible="notice-portfolio-lite-30" class="notice updated is-dismissible">
 		<p><?php printf( __( 'Enjoying the <b>Portfolio Lite</b> theme? Enter your email to receive updates and information from <a href="%1$s" target="_blank">Organic Themes</a>.', 'portfolio-lite' ), 'https://organicthemes.com/themes/' ); ?></p>
 		<div id="mc_embed_signup" class="clear" style="overflow: hidden; margin-bottom: 12px;">
 			<form action="//organicthemes.us1.list-manage.com/subscribe/post?u=7cf6b005868eab70f031dc806&amp;id=c3cce2fac0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
@@ -695,3 +695,5 @@ add_action( 'body_class', 'portfolio_lite_body_class' );
 
 require_once( get_template_directory() . '/customizer/customizer.php' );
 require_once( get_template_directory() . '/includes/typefaces.php' );
+require_once( get_template_directory() . '/includes/plugin-activation.php' );
+require_once( get_template_directory() . '/includes/plugin-activation-class.php' );
