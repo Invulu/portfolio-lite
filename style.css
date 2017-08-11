@@ -7,7 +7,7 @@
 	Author URI: https://organicthemes.com
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.1.2.1
+	Version: 1.1.3
 	Text Domain: portfolio-lite
 	Domain Path: /languages/
 	Tags: portfolio, photography, blog, one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, custom-logo, featured-images, featured-image-header, flexible-header, full-width-template, translation-ready, sticky-post, threaded-comments, editor-style, theme-options
@@ -2034,7 +2034,7 @@ input[type=submit], input#submit, input.button, #wrapper #infinite-handle span {
 	display: inline-block;
 	position: relative;
 	color: rgba(0, 0, 0, 0.6) !important;
-	background: none;
+	background-color: #ffffff;
 	font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
 	font-size: 0.8em;
 	font-weight: 400;
