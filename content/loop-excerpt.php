@@ -25,8 +25,8 @@
 
 		<!-- BEGIN .post-navigation -->
 		<div class="post-navigation">
-			<div class="previous-post"><?php previous_post_link( '%link', '<i class="fa fa-angle-left" aria-hidden="true"></i>', true, '', 'category' ); ?></div>
-			<div class="next-post"><?php next_post_link( '%link', '<i class="fa fa-angle-right" aria-hidden="true"></i>', true, '', 'category' ); ?></div>
+			<div class="next-post"><?php next_post_link( '%link', '<i class="fa fa-angle-left" aria-hidden="true"></i>', true, '', 'category' ); ?></div>
+			<div class="previous-post"><?php previous_post_link( '%link', '<i class="fa fa-angle-right" aria-hidden="true"></i>', true, '', 'category' ); ?></div>
 		<!-- END .post-navigation -->
 		</div>
 

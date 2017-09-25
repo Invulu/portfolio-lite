@@ -28,7 +28,7 @@
 		<!-- BEGIN .footer-information -->
 		<div class="footer-information">
 
-			<div class="align-left">
+			<div <?php if ( has_nav_menu( 'footer-menu' ) ) { ?>class="align-left"<?php } else { ?>class="align-center"<?php } ?>>
 
 				<p>
 					<?php esc_html_e( 'Copyright', 'portfolio-lite' ); ?> &copy; <?php echo date( esc_html__( 'Y', 'portfolio-lite' ) ); ?> &middot; <?php esc_html_e( 'All Rights Reserved', 'portfolio-lite' ); ?> &middot;
