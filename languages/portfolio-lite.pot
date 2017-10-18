@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Portfolio Lite\n"
-"POT-Creation-Date: 2017-05-18 22:55-1000\n"
-"PO-Revision-Date: 2017-05-18 22:55-1000\n"
+"POT-Creation-Date: 2017-10-18 08:36-1000\n"
+"PO-Revision-Date: 2017-10-18 08:35-1000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -82,12 +82,12 @@ msgid "Posts by %1$s:"
 msgstr ""
 
 #: content/author-page.php:49 content/loop-archive.php:65
-#: content/loop-blog.php:64 content/loop-cat.php:50
+#: content/loop-blog.php:57 content/loop-cat.php:50
 msgid "Previous Page"
 msgstr ""
 
 #: content/author-page.php:50 content/loop-archive.php:66
-#: content/loop-blog.php:65 content/loop-cat.php:51
+#: content/loop-blog.php:58 content/loop-cat.php:51
 msgid "Next Page"
 msgstr ""
 
@@ -105,7 +105,7 @@ msgid ""
 "searching will help."
 msgstr ""
 
-#: content/loop-archive.php:26 content/loop-blog.php:29
+#: content/loop-archive.php:26 content/loop-blog.php:22
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
@@ -114,20 +114,20 @@ msgstr ""
 msgid "Tags:"
 msgstr ""
 
-#: content/loop-archive.php:44 content/loop-blog.php:41
+#: content/loop-archive.php:44 content/loop-blog.php:34
 #: content/loop-post.php:49
 msgid "by"
 msgstr ""
 
-#: content/loop-archive.php:48 content/loop-blog.php:45
+#: content/loop-archive.php:48 content/loop-blog.php:38
 msgid "Leave a Comment"
 msgstr ""
 
-#: content/loop-archive.php:48 content/loop-blog.php:45
+#: content/loop-archive.php:48 content/loop-blog.php:38
 msgid "1 Comment"
 msgstr ""
 
-#: content/loop-blog.php:34 content/loop-page.php:23 functions.php:418
+#: content/loop-blog.php:27 content/loop-page.php:23
 msgid "Read More"
 msgstr ""
 
@@ -143,7 +143,7 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
-#: content/loop-page.php:38 content/loop-post.php:50 functions.php:376
+#: content/loop-page.php:38 content/loop-post.php:50 functions.php:478
 msgid "(Edit)"
 msgstr ""
 
@@ -207,26 +207,23 @@ msgstr ""
 msgid "Slide"
 msgstr ""
 
-#: customizer/customizer-sanitize.php:95 customizer/customizer.php:188
+#: customizer/customizer-sanitize.php:95
 msgid "One Column"
 msgstr ""
 
-#: customizer/customizer-sanitize.php:96 customizer/customizer.php:189
-#: customizer/customizer.php:207
+#: customizer/customizer-sanitize.php:96
 msgid "Two Columns"
 msgstr ""
 
-#: customizer/customizer-sanitize.php:97 customizer/customizer.php:190
-#: customizer/customizer.php:208
+#: customizer/customizer-sanitize.php:97
 msgid "Three Columns"
 msgstr ""
 
-#: customizer/customizer-sanitize.php:98 customizer/customizer.php:191
-#: customizer/customizer.php:209
+#: customizer/customizer-sanitize.php:98
 msgid "Four Columns"
 msgstr ""
 
-#: customizer/customizer-sanitize.php:99 customizer/customizer.php:210
+#: customizer/customizer-sanitize.php:99
 msgid "Five Columns"
 msgstr ""
 
@@ -274,22 +271,6 @@ msgstr ""
 msgid "Transition Style"
 msgstr ""
 
-#: customizer/customizer.php:171
-msgid "Layout"
-msgstr ""
-
-#: customizer/customizer.php:172
-msgid "Toggle the display and layout of various elements throughout the theme."
-msgstr ""
-
-#: customizer/customizer.php:183
-msgid "Portfolio Project Columns"
-msgstr ""
-
-#: customizer/customizer.php:202
-msgid "Testimonial Columns"
-msgstr ""
-
 #: footer.php:34
 msgid "Copyright"
 msgstr ""
@@ -307,108 +288,571 @@ msgstr ""
 msgid "%1$s by %2$s"
 msgstr ""
 
-#: functions.php:60
+#: functions.php:64
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:61
+#: functions.php:65
 msgid "Slide Menu"
 msgstr ""
 
-#: functions.php:62
+#: functions.php:66
 msgid "Social Menu"
 msgstr ""
 
-#: functions.php:63
+#: functions.php:67
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:73
+#: functions.php:77
 msgid "Default Custom Header"
 msgstr ""
 
-#: functions.php:106
+#: functions.php:110
 msgid "Portfolio Lite Theme"
 msgstr ""
 
-#: functions.php:107
+#: functions.php:111
 msgid "My <b>Awesome</b> Organic Theme"
 msgstr ""
 
-#: functions.php:120
+#: functions.php:124
 msgid "Services"
 msgstr ""
 
-#: functions.php:121
+#: functions.php:125
 msgid ""
 "<p>This is an example services page. You may want to write about the various "
 "services your company provides.</p>"
 msgstr ""
 
-#: functions.php:133
+#: functions.php:137
 msgid "Logo"
 msgstr ""
 
-#: functions.php:137
+#: functions.php:141
 msgid "About Image"
 msgstr ""
 
-#: functions.php:141
+#: functions.php:145
 msgid "Services Image"
 msgstr ""
 
-#: functions.php:145
+#: functions.php:149
 msgid "Contact Image"
 msgstr ""
 
-#: functions.php:153
+#: functions.php:157
 msgid "Primary Navigation"
 msgstr ""
 
-#: functions.php:247
+#: functions.php:275
+#, php-format
+msgid ""
+"Enjoying the <b>Portfolio Lite</b> theme? Enter your email to receive "
+"updates and information from <a href=\"%1$s\" target=\"_blank\">Organic "
+"Themes</a>."
+msgstr ""
+
+#: functions.php:349
 msgid "Default Sidebar"
 msgstr ""
 
-#: functions.php:255
+#: functions.php:357
 msgid "Blog Sidebar"
 msgstr ""
 
-#: functions.php:277
+#: functions.php:379
 #, php-format
 msgid "<span class=\"%1$s\">Updated:</span> %2$s"
 msgstr ""
 
-#: functions.php:286
+#: functions.php:388
 #, php-format
 msgid "<span class=\"%1$s\">Posted:</span> %2$s"
 msgstr ""
 
-#: functions.php:336
+#: functions.php:438
 msgid "Pingback:"
 msgstr ""
 
-#: functions.php:336
+#: functions.php:438
 msgid "Edit"
 msgstr ""
 
 #. translators: 1: comment author, 2: date and time
-#: functions.php:354
+#: functions.php:456
 #, php-format
 msgid "%1$s %2$s"
 msgstr ""
 
 #. translators: 1: date, 2: time
-#: functions.php:360
+#: functions.php:462
 #, php-format
 msgid "%1$s, %2$s"
 msgstr ""
 
-#: functions.php:369
+#: functions.php:471
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:374
+#: functions.php:476
 msgid "Reply"
+msgstr ""
+
+#. translators: %s: Name of current post
+#: functions.php:511 functions.php:532
+#, php-format
+msgid "Continue Reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: includes/plugin-activation-class.php:327
+msgid "Install Required Plugins"
+msgstr ""
+
+#: includes/plugin-activation-class.php:328
+msgid "Install Plugins"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: includes/plugin-activation-class.php:330
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: includes/plugin-activation-class.php:332
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: includes/plugin-activation-class.php:333
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#. translators: 1: plugin name(s).
+#: includes/plugin-activation-class.php:336
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: includes/plugin-activation-class.php:342
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: includes/plugin-activation-class.php:348
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: includes/plugin-activation-class.php:354
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: includes/plugin-activation-class.php:360
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: includes/plugin-activation-class.php:366
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/plugin-activation-class.php:371
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/plugin-activation-class.php:376
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/plugin-activation-class.php:381
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/plugin-activation-class.php:385
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: includes/plugin-activation-class.php:386
+#: includes/plugin-activation-class.php:827
+#: includes/plugin-activation-class.php:2533
+#: includes/plugin-activation-class.php:3580
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: includes/plugin-activation-class.php:387
+#: includes/plugin-activation-class.php:3159
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: includes/plugin-activation-class.php:388
+#: includes/plugin-activation-class.php:2952
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name.
+#: includes/plugin-activation-class.php:390
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: includes/plugin-activation-class.php:392
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#. translators: 1: dashboard link.
+#: includes/plugin-activation-class.php:394
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: includes/plugin-activation-class.php:395
+msgid "Dismiss this notice"
+msgstr ""
+
+#: includes/plugin-activation-class.php:396
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: includes/plugin-activation-class.php:397
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: includes/plugin-activation-class.php:522
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: includes/plugin-activation-class.php:523
+msgid "Update Required"
+msgstr ""
+
+#: includes/plugin-activation-class.php:934
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: includes/plugin-activation-class.php:934
+#: includes/plugin-activation-class.php:937
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: includes/plugin-activation-class.php:937
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: includes/plugin-activation-class.php:1121
+#: includes/plugin-activation-class.php:2948
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#. translators: %s: version number
+#: includes/plugin-activation-class.php:1982
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: includes/plugin-activation-class.php:2273
+msgid "Required"
+msgstr ""
+
+#: includes/plugin-activation-class.php:2276
+msgid "Recommended"
+msgstr ""
+
+#: includes/plugin-activation-class.php:2292
+msgid "WordPress Repository"
+msgstr ""
+
+#: includes/plugin-activation-class.php:2295
+msgid "External Source"
+msgstr ""
+
+#: includes/plugin-activation-class.php:2298
+msgid "Pre-Packaged"
+msgstr ""
+
+#: includes/plugin-activation-class.php:2315
+msgid "Not Installed"
+msgstr ""
+
+#: includes/plugin-activation-class.php:2319
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: includes/plugin-activation-class.php:2321
+msgid "Active"
+msgstr ""
+
+#: includes/plugin-activation-class.php:2327
+msgid "Required Update not Available"
+msgstr ""
+
+#: includes/plugin-activation-class.php:2330
+msgid "Requires Update"
+msgstr ""
+
+#: includes/plugin-activation-class.php:2333
+msgid "Update recommended"
+msgstr ""
+
+#. translators: 1: install status, 2: update status
+#: includes/plugin-activation-class.php:2342
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#. translators: 1: number of plugins.
+#: includes/plugin-activation-class.php:2388
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: includes/plugin-activation-class.php:2392
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: includes/plugin-activation-class.php:2396
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: includes/plugin-activation-class.php:2400
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/plugin-activation-class.php:2482
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: includes/plugin-activation-class.php:2490
+msgid "Installed version:"
+msgstr ""
+
+#: includes/plugin-activation-class.php:2498
+msgid "Minimum required version:"
+msgstr ""
+
+#: includes/plugin-activation-class.php:2510
+msgid "Available version:"
+msgstr ""
+
+#: includes/plugin-activation-class.php:2533
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: includes/plugin-activation-class.php:2547
+msgid "Plugin"
+msgstr ""
+
+#: includes/plugin-activation-class.php:2548
+msgid "Source"
+msgstr ""
+
+#: includes/plugin-activation-class.php:2549
+msgid "Type"
+msgstr ""
+
+#: includes/plugin-activation-class.php:2553
+msgid "Version"
+msgstr ""
+
+#: includes/plugin-activation-class.php:2554
+msgid "Status"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: includes/plugin-activation-class.php:2603
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: includes/plugin-activation-class.php:2608
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: includes/plugin-activation-class.php:2614
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: includes/plugin-activation-class.php:2684
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: includes/plugin-activation-class.php:2717
+msgid "Install"
+msgstr ""
+
+#: includes/plugin-activation-class.php:2723
+msgid "Update"
+msgstr ""
+
+#: includes/plugin-activation-class.php:2726
+msgid "Activate"
+msgstr ""
+
+#: includes/plugin-activation-class.php:2757
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: includes/plugin-activation-class.php:2759
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: includes/plugin-activation-class.php:2800
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: includes/plugin-activation-class.php:2802
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: includes/plugin-activation-class.php:2908
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: includes/plugin-activation-class.php:2934
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: includes/plugin-activation-class.php:3158
+msgid "Plugin activation failed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: includes/plugin-activation-class.php:3498
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. translators: 1: plugin name, 2: error message.
+#: includes/plugin-activation-class.php:3501
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: includes/plugin-activation-class.php:3503
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: includes/plugin-activation-class.php:3507
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: includes/plugin-activation-class.php:3509
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: includes/plugin-activation-class.php:3509
+#: includes/plugin-activation-class.php:3517
+msgid "Show Details"
+msgstr ""
+
+#: includes/plugin-activation-class.php:3509
+#: includes/plugin-activation-class.php:3517
+msgid "Hide Details"
+msgstr ""
+
+#: includes/plugin-activation-class.php:3510
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: includes/plugin-activation-class.php:3512
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: includes/plugin-activation-class.php:3515
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: includes/plugin-activation-class.php:3517
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: includes/plugin-activation-class.php:3518
+msgid "All installations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: includes/plugin-activation-class.php:3520
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #: includes/typefaces.php:23
@@ -463,13 +907,18 @@ msgid "Portfolio Lite"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://organicthemes.com/theme/portfolio/"
+msgid "https://organicthemes.com/theme/portfolio-lite/"
 msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"A minimally designed theme framework for WordPress. Created by Organic "
-"Themes."
+"Portfolio Lite is a professional, modern and minimal portfolio theme for "
+"artists, designers, photographers and creatives. The theme features a "
+"slideshow page template that creates a slideshow from the first WordPress "
+"image gallery added to the content. The slideshow is centered vertically and "
+"horizontally in the browser window. Additionally, categories are displayed "
+"in a multi-column portfolio layout. Instructions for setup can be found "
+"here, https://organicthemes.com/the-free-wordpress-portfolio-lite-theme/."
 msgstr ""
 
 #. Author of the plugin/theme
@@ -477,5 +926,5 @@ msgid "Organic Themes"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://organicthemes.com"
+msgid "https://organicthemes.com"
 msgstr ""

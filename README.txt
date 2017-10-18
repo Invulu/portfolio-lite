@@ -1,10 +1,10 @@
 === Portfolio Lite ===
 
-Version: 1.1.4
+Version: 1.1.5
 Contributors: organicthemes, itsdavidmorgan
 Tags: portfolio, photography, blog, one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, custom-logo, featured-images, featured-image-header, flexible-header, full-width-template, translation-ready, sticky-post, threaded-comments, editor-style, theme-options
 Requires at least: 4.7
-Tested up to: 4.7.5
+Tested up to: 4.8.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -68,6 +68,9 @@ GNU General Public License for more details.
 * jquery.flexslider.js, Licensed under GPLv2 or later.
 
 == Changelog ==
+
+== 1.1.5 ==
+* Regenerated .pot language file
 
 == 1.1.4 ==
 * Added current menu item style
