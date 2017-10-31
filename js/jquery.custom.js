@@ -26,9 +26,9 @@
 		if( ($).flexslider) {
 			var slider = $('.flexslider');
 			slider.flexslider({
-				slideshowSpeed		: slider.attr('data-speed'),
+				slideshowSpeed		: 12000,
 				animationDuration	: 800,
-				animation			: slider.attr('data-transition'),
+				animation			: 'fade',
 				video				: false,
 				useCSS				: false,
 				prevText			: '<i class="fa fa-angle-left"></i>',
@@ -36,7 +36,7 @@
 				touch				: false,
 				controlNav			: false,
 				animationLoop		: true,
-				smoothHeight		: true,
+				smoothHeight		: false,
 				pauseOnAction		: true,
 				pauseOnHover		: true,
 				controlsContainer: $('.custom-controls'),

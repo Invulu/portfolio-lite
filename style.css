@@ -7,7 +7,7 @@
 	Author URI: https://organicthemes.com
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.1.6
+	Version: 1.1.7
 	Text Domain: portfolio-lite
 	Domain Path: /languages/
 	Tags: portfolio, photography, blog, one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, custom-logo, featured-images, featured-image-header, flexible-header, full-width-template, translation-ready, sticky-post, threaded-comments, editor-style, theme-options
@@ -654,20 +654,17 @@ ul.menu li li a::after {
 .portfolio-slideshow #wrapper {
 	display: flex;
 	align-content: center;
-	height: 100vh;
 }
-.admin-bar.portfolio-slideshow #wrapper {
-	height: calc(100vh - 32px);
-	min-height: calc(100vh - 32px);
-}
-.portfolio-slideshow .container {
+.portfolio-slideshow .container,
+.portfolio-not-single.portfolio-slideshow .container {
 	display: flex;
 	align-self: center;
 	align-content: stretch;
 	justify-content: space-between;
 	width: 100%;
 	max-width: 1260px;
-	margin: -72px auto 0px;
+	margin: 0px auto 0px;
+	padding-top: 0px;
 }
 .portfolio-not-single .container {
 	padding-top: 48px;
@@ -1160,6 +1157,10 @@ body.portfolio-landing-page {
 	overflow: hidden;
 	-webkit-backface-visibility: hidden;
 }
+.feature-img .bg-img {
+	max-height: none;
+	box-shadow: none;
+}
 .feature-img:hover .bg-img {
 	transform: scale(1.1);
 	-webkit-transform: scale(1.1);
@@ -1386,6 +1387,7 @@ img.alignleft {
 	max-height: 720px;
 	background-size: contain;
 	background-repeat: no-repeat;
+	box-shadow: none;
 }
 .flexslider .slides img {
 	width: 100%;
@@ -1855,10 +1857,7 @@ html[xmlns] .slides {
 ************************************************/
 
 .portfolio-slideshow .footer {
-	width: 100%;
-	position: absolute;
-	bottom: 0;
-	border: none;
+	display: none;
 }
 .footer {
 	font-size: 0.8em;
