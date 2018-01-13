@@ -300,7 +300,7 @@ function portfolio_lite_admin_notice() {
 
 	<div data-dismissible="notice-portfolio-lite-30" class="notice updated is-dismissible">
 
-		<p><?php printf( __( 'Enjoying the <b>Portfolio Lite</b> theme? Enter your email to receive updates and information from <a href="%1$s" target="_blank">Organic Themes</a>. For instructions please refer to our <a href="%2$s" target="_blank">theme setup guide</a>.', 'portfolio-lite' ), 'https://organicthemes.com/themes/', 'https://organicthemes.com/the-free-wordpress-portfolio-lite-theme/' ); ?></p>
+		<p><?php printf( __( 'Enter your email to receive updates and information from <a href="%1$s" target="_blank">Organic Themes</a>. For instructions please refer to our <a href="%2$s" target="_blank">theme setup guide</a>. Upgrade to <a href="%3$s" target="_blank">premium version</a> for more options and support.', 'portfolio-lite' ), 'https://organicthemes.com/themes/', 'https://organicthemes.com/the-free-wordpress-portfolio-lite-theme/', 'https://organicthemes.com/theme/portfolio-theme/' ); ?></p>
 
 		<div class="follows" style="overflow: hidden; margin-bottom: 12px;">
 
