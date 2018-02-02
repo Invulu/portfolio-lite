@@ -7,7 +7,7 @@
 	Author URI: https://organicthemes.com
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.1.10
+	Version: 1.2
 	Text Domain: portfolio-lite
 	Domain Path: /languages/
 	Tags: portfolio, photography, blog, one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, custom-logo, featured-images, featured-image-header, flexible-header, full-width-template, translation-ready, sticky-post, threaded-comments, editor-style, theme-options
@@ -408,9 +408,6 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 	display: block;
 	align-self: center;
 	line-height: 0;
-}
-.custom-logo-link img {
-	zoom: 50%;
 }
 #masthead {
 	display: flex;
