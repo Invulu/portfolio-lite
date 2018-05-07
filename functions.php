@@ -214,6 +214,32 @@ if ( ! function_exists( 'portfolio_lite_enqueue_scripts' ) ) {
 }
 add_action( 'wp_enqueue_scripts', 'portfolio_lite_enqueue_scripts' );
 
+if ( ! function_exists( 'portfolio_lite_enqueue_admin_scripts' ) ) {
+
+	/** Function portfolio_lite_enqueue_admin_scripts */
+	function portfolio_lite_enqueue_admin_scripts( $hook ) {
+		if ( 'themes.php' !== $hook ) {
+			return;
+		}
+		wp_enqueue_script( 'portfolio-custom-admin', get_template_directory_uri() . '/js/jquery.custom.admin.js', array( 'jquery' ), '1.0', true );
+	}
+}
+add_action( 'admin_enqueue_scripts', 'portfolio_lite_enqueue_admin_scripts' );
+
+/*
+-------------------------------------------------------------------------------------------------------
+	Add Submenu Item
+-------------------------------------------------------------------------------------------------------
+*/
+
+add_action( 'admin_menu', 'organic_origin_admin_menu' );
+
+function organic_origin_admin_menu() {
+	global $submenu;
+	$permalink = esc_url( 'https://organicthemes.com/theme/portfolio-theme/' );
+	$submenu['themes.php'][6] = array( __( 'Theme Upgrade', 'portfolio-lite' ), 'manage_options', $permalink, 6 );
+}
+
 /*
 -------------------------------------------------------------------------------------------------------
 	Custom Styles

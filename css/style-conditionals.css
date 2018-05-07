@@ -96,7 +96,8 @@ body.dark {
 	color: #ffffff;
 }
 .dark .next-post,
-.dark .flex-direction-nav .flex-next {
+.dark .flex-direction-nav .flex-next,
+.dark #comments {
 	border-color: rgba(255, 255, 255, 0.24);
 }
 .dark .flexslider .preloader {
