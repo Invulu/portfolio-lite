@@ -48,12 +48,12 @@ get_header(); ?>
 			<!-- BEGIN .sixteen columns -->
 			<div class="sixteen columns">
 
-				<!-- BEGIN .post-area no-sidebar -->
-				<div class="post-area no-sidebar">
+				<!-- BEGIN .post-area -->
+				<div class="post-area">
 
 					<?php get_template_part( 'content/loop', 'archive' ); ?>
 
-				<!-- END .post-area no-sidebar -->
+				<!-- END .post-area -->
 				</div>
 
 			<!-- END .sixteen columns -->

@@ -259,12 +259,6 @@
 		max-width: calc(100% + 72px);
 		margin-left: -36px;
 	}
-	img.alignleft {
-		margin-left: -36px;
-	}
-	img.alignright {
-		margin-right: -36px;
-	}
 	img.alignnone,
 	.wp-caption.alignnone {
 		width: calc(100% + 72px);

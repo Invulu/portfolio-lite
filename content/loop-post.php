@@ -18,7 +18,7 @@
 	<div class="post-holder">
 
 		<!-- BEGIN .article -->
-		<article class="article">
+		<article class="article clearfix">
 
 			<?php if ( ! get_post_gallery() && ! has_post_thumbnail() && empty( $header_image ) ) { ?>
 				<h1 class="headline"><?php the_title(); ?></h1>

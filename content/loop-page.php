@@ -16,7 +16,7 @@
 	<div class="page-holder">
 
 		<!-- BEGIN .article -->
-		<article class="article">
+		<article class="article clearfix">
 
 			<h1 class="headline"><?php the_title(); ?></h1>
 
