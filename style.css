@@ -7,7 +7,7 @@
 	Author URI: https://organicthemes.com
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.2.3
+	Version: 1.2.4
 	Text Domain: portfolio-lite
 	Domain Path: /languages/
 	Tags: portfolio, photography, blog, one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, custom-logo, featured-images, featured-image-header, flexible-header, full-width-template, translation-ready, sticky-post, threaded-comments, editor-style, theme-options
@@ -1205,10 +1205,14 @@ a.img-text {
 	width: 100%;
 	height: 100%;
 	opacity: 0;
+	margin: 0px;
+	padding: 24px;
 	transition: all .25s;
 	-moz-transition: all .25s;
 	-webkit-transition: all .25s;
 	-o-transition: all .25s;
+	box-sizing: border-box;
+	outline: none;
 	z-index: 8;
 }
 a.img-text:hover {
@@ -1222,11 +1226,6 @@ a.img-text .title {
 	margin: 0px;
 	padding: 12px 18px;
 	border-radius: 2px;
-}
-a.img-text {
-	margin: 0px;
-	padding: 24px;
-	box-sizing: border-box;
 }
 .avatar {
 	background: #ffffff;
@@ -1599,54 +1598,42 @@ html[xmlns] .slides {
 ************************************************/
 
 .gallery {
-	display: block;
-	text-align: center;
-	clear: both;
-	overflow: hidden;
-	margin: 12px auto 12px;
-	width: -webkit-fit-content;
-	width: -moz-fit-content;
-	width: fit-content;
-}
-.gallery .gallery-row {
-	display:block;
-	clear: both;
-	overflow: hidden;
-	margin: 0;
+	margin: 18px auto 18px !important;
 }
 .gallery .gallery-item {
-	overflow: hidden;
 	float: left;
-	margin: 0;
+	margin-top: 0 !important;
 	text-align: center;
-	list-style: none;
-	padding: 0;
+	width: 33%;
 }
-.gallery .gallery-item a {
+.gallery-item a {
 	display: block;
-	background: #f4f4f4;
+	line-height: 0;
+}
+.gallery img {
+	border: 6px solid rgba(0, 0, 0, 0.08) !important;
 	margin: 6px;
-	padding: 6px;
-	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12);
-	border: none;
+	padding: 0px;
 	border-radius: 2px;
-	transition: background .25s;
-	-moz-transition: background .25s;
-	-webkit-transition: background .25s;
-	-o-transition: background .25s;
+	box-sizing: border-box;
+	transition: all .25s;
+	-moz-transition: all .25s;
+	-webkit-transition: all .25s;
+	-o-transition: all .25s;
 }
-.gallery .gallery-item a:hover {
-	background: #3399cc;
+.gallery img:hover {
+	border-color: rgba(0, 0, 0, 0.4) !important;
 }
-.gallery .gallery-item img,
-.gallery .gallery-item img.thumbnail {
-	display: block;
-	height: auto;
-	margin: 0 auto;
-	border: none !important;
+.gallery .gallery-caption {
+	font-size: 12px;
+	line-height: 1.65;
+	margin: 2px 0px 6px 0px;
 }
-.gallery-caption {
-	margin-left: 0;
+.gallery dl, .gallery dt {
+	margin: 0px;
+}
+.gallery br+br {
+	display: none;
 }
 
 /************************************************
