@@ -129,13 +129,3 @@ function portfolio_lite_logo_customize_css() {
 	wp_add_inline_style( 'customize-controls', '#customize-control-logo_size input[type=range] { width: 100%; }' );
 }
 add_action( 'customize_controls_enqueue_scripts', 'portfolio_lite_logo_customize_css' );
-
-/**
- * Testing function to remove logo_size theme mod
- */
-function portfolio_lite_logo_remove_theme_mod() {
-	if ( isset( $_GET['remove_logo_size'] ) && 'true' == $_GET['remove_logo_size'] ){
-		set_theme_mod( 'logo_size', '' );
-	}
-}
-add_action( 'wp_loaded', 'portfolio_lite_logo_remove_theme_mod' );

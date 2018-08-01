@@ -1,6 +1,6 @@
 === Portfolio Lite ===
 
-Version: 1.2.4
+Version: 1.2.5
 Contributors: organicthemes, itsdavidmorgan
 Tags: portfolio, photography, blog, one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, custom-logo, featured-images, featured-image-header, flexible-header, full-width-template, translation-ready, sticky-post, threaded-comments, editor-style, theme-options
 Requires at least: 4.8
@@ -68,6 +68,11 @@ GNU General Public License for more details.
 * jquery.flexslider.js, Licensed under GPLv2 or later.
 
 == Changelog ==
+
+== 1.2.5 ==
+* Updated OCW plugin name to Organic Builder Widgets
+* Added theme support submenu link
+* General cleanup
 
 == 1.2.4 ==
 * Fixed Chrome bug where additional column links did not work
