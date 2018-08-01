@@ -235,14 +235,14 @@ add_action( 'admin_enqueue_scripts', 'portfolio_lite_enqueue_admin_scripts' );
 function portfolio_lite_support_link() {
 	global $submenu;
 	$support_link = esc_url( 'https://organicthemes.com/support/' );
-	$submenu['themes.php'][6] = array( __( 'Theme Support', 'portfolio-lite' ), 'manage_options', $support_link );
+	$submenu['themes.php'][] = array( __( 'Theme Support', 'portfolio-lite' ), 'manage_options', $support_link );
 }
 add_action( 'admin_menu', 'portfolio_lite_support_link' );
 
 function portfolio_lite_upgrade_link() {
 	global $submenu;
 	$upgrade_link = esc_url( 'https://organicthemes.com/theme/portfolio-theme/' );
-	$submenu['themes.php'][7] = array( __( 'Theme Upgrade', 'portfolio-lite' ), 'manage_options', $upgrade_link );
+	$submenu['themes.php'][] = array( __( 'Theme Upgrade', 'portfolio-lite' ), 'manage_options', $upgrade_link );
 }
 add_action( 'admin_menu', 'portfolio_lite_upgrade_link' );
 
