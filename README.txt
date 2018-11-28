@@ -1,10 +1,10 @@
 === Portfolio Lite ===
 
-Version: 1.2.6
+Version: 1.3
 Contributors: organicthemes, itsdavidmorgan
 Tags: portfolio, photography, blog, one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, custom-logo, featured-images, featured-image-header, flexible-header, full-width-template, translation-ready, sticky-post, threaded-comments, editor-style, theme-options
 Requires at least: 4.8
-Tested up to: 4.9.5
+Tested up to: 5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -68,6 +68,14 @@ GNU General Public License for more details.
 * jquery.flexslider.js, Licensed under GPLv2 or later.
 
 == Changelog ==
+
+== 1.3 ==
+* Added Gutenberg optimization
+* Changed layout of default blog to portfolio style
+* Added blog page template in previous blog style
+* Updated recommended plugins adding Profile Block
+* General cleanup
+* Style tweaks
 
 == 1.2.6 ==
 * Fixed issue of custom admin submenu link overwriting other links

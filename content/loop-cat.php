@@ -35,7 +35,12 @@
 				</div>
 			</div>
 		<?php } else { ?>
-			<h2 class="title no-img text-center"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+			<div class="feature-img">
+				<a class="img-text" href="<?php the_permalink(); ?>" rel="bookmark"><h2 class="title"><?php the_title(); ?></h2></a>
+				<div class="bg-img" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/placeholder.jpg);">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/placeholder.jpg" alt="Placeholder" />
+				</div>
+			</div>
 		<?php } ?>
 
 	<!-- END .post class -->

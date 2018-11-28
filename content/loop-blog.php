@@ -8,7 +8,8 @@
 
 ?>
 
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+<?php $wp_query = new WP_Query( array( 'cat' => 'blog', 'paged' => $paged ) ); ?>
+<?php if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 
 	<!-- BEGIN .post class -->
 	<div <?php post_class( 'blog-holder' ); ?> id="post-<?php the_ID(); ?>">
@@ -53,10 +54,12 @@
 
 	<?php if ( $wp_query->max_num_pages > 1 ) { ?>
 
-		<?php the_posts_pagination( array(
+		<?php
+		the_posts_pagination( array(
 			'prev_text' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Previous Page', 'portfolio-lite' ) . ' </span>&laquo;',
 			'next_text' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Next Page', 'portfolio-lite' ) . ' </span>&raquo;',
-		) ); ?>
+		) );
+		?>
 
 	<?php } ?>
 

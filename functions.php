@@ -16,20 +16,19 @@ if ( ! function_exists( 'portfolio_lite_setup' ) ) :
 
 	/** Function portfolio_lite_setup */
 	function portfolio_lite_setup() {
-
 		/*
-		* Enable support for translation.
-		*/
+		 * Enable support for translation.
+		 */
 		load_theme_textdomain( 'portfolio-lite', get_template_directory() . '/languages' );
 
 		/*
-		* Enable support for RSS feed links to head.
-		*/
+		 * Enable support for RSS feed links to head.
+		 */
 		add_theme_support( 'automatic-feed-links' );
 
 		/*
-		* Enable support for post thumbnails.
-		*/
+		 * Enable support for post thumbnails.
+		 */
 		add_theme_support( 'post-thumbnails' );
 
 		add_image_size( 'portfolio-featured-large', 2400, 1800, true ); // Large Featured Image.
@@ -38,18 +37,23 @@ if ( ! function_exists( 'portfolio_lite_setup' ) ) :
 		add_image_size( 'portfolio-featured-square', 1200, 1200, true ); // Square Featured Image.
 
 		/*
-		* Enable support for site title tag.
-		*/
+		 * Enable support for site title tag.
+		 */
 		add_theme_support( 'title-tag' );
 
 		/*
-		* Enable selective refresh for widgets.
-		*/
+		 * Enable selective refresh for widgets.
+		 */
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
 		/*
-		* Enable support for custom logo.
-		*/
+		 * Enable support for wide alignment class for Gutenberg blocks.
+		 */
+		add_theme_support( 'align-wide' );
+
+		/*
+		 * Enable support for custom logo.
+		 */
 		add_theme_support( 'custom-logo', array(
 			'height'      => 360,
 			'width'       => 360,
@@ -58,8 +62,8 @@ if ( ! function_exists( 'portfolio_lite_setup' ) ) :
 		) );
 
 		/*
-		* Enable support for custom menus.
-		*/
+		 * Enable support for custom menus.
+		 */
 		register_nav_menus( array(
 			'main-menu' => esc_html__( 'Main Menu', 'portfolio-lite' ),
 			'slide-menu' => esc_html__( 'Slide Menu', 'portfolio-lite' ),
@@ -68,37 +72,37 @@ if ( ! function_exists( 'portfolio_lite_setup' ) ) :
 		));
 
 		/*
-		* Enable support for custom header.
-		*/
+		 * Enable support for custom header.
+		 */
 		register_default_headers( array(
 			'default' => array(
-			'url'   => get_template_directory_uri() . '/images/default-header.jpg',
-			'thumbnail_url' => get_template_directory_uri() . '/images/default-header.jpg',
-			'description'   => esc_html__( 'Default Custom Header', 'portfolio-lite' ),
+				'url'           => get_template_directory_uri() . '/images/default-header.jpg',
+				'thumbnail_url' => get_template_directory_uri() . '/images/default-header.jpg',
+				'description'   => esc_html__( 'Default Custom Header', 'portfolio-lite' ),
 			),
 		));
 		$defaults = array(
-			'width'								=> 1800,
-			'height'							=> 480,
-			'flex-height'					=> true,
-			'flex-width'					=> true,
-			'default-image' 			=> get_template_directory_uri() . '/images/default-header.jpg',
-			'header-text'					=> false,
-			'uploads'							=> true,
+			'width'         => 1800,
+			'height'        => 480,
+			'flex-height'   => true,
+			'flex-width'    => true,
+			'default-image' => get_template_directory_uri() . '/images/default-header.jpg',
+			'header-text'   => false,
+			'uploads'       => true,
 		);
 		add_theme_support( 'custom-header', $defaults );
 
 		/*
-		* Enable support for custom background.
-		*/
+		 * Enable support for custom background.
+		 */
 		$defaults = array(
-			'default-color'          => 'ffffff',
+			'default-color' => 'ffffff',
 		);
 		add_theme_support( 'custom-background', $defaults );
 
 		/*
-		* Enable theme starter content.
-		*/
+		 * Enable theme starter content.
+		 */
 		add_theme_support( 'starter-content', array(
 
 			// Set default theme options.
@@ -166,8 +170,8 @@ if ( ! function_exists( 'portfolio_lite_setup' ) ) :
 						'page_blog',
 						'page_contact',
 					),
-				)
-			)
+				),
+			),
 
 		));
 
@@ -228,6 +232,21 @@ add_action( 'admin_enqueue_scripts', 'portfolio_lite_enqueue_admin_scripts' );
 
 /*
 -------------------------------------------------------------------------------------------------------
+	Gutenberg Editor Styles
+-------------------------------------------------------------------------------------------------------
+*/
+
+/**
+ * Enqueue WordPress theme styles within Gutenberg.
+ */
+function portfolio_lite_gutenberg_styles() {
+	// Load the theme styles within Gutenberg.
+	wp_enqueue_style( 'portfolio-lite-gutenberg', get_theme_file_uri( '/css/gutenberg.css' ), false, '1.0', 'all' );
+}
+add_action( 'enqueue_block_editor_assets', 'portfolio_lite_gutenberg_styles' );
+
+/*
+-------------------------------------------------------------------------------------------------------
 	Admin Support and Upgrade Link
 -------------------------------------------------------------------------------------------------------
 */
@@ -241,7 +260,7 @@ add_action( 'admin_menu', 'portfolio_lite_support_link' );
 
 function portfolio_lite_upgrade_link() {
 	global $submenu;
-	$upgrade_link = esc_url( 'https://organicthemes.com/theme/portfolio-theme/' );
+	$upgrade_link = esc_url( 'https://organicthemes.com/theme/portfolio-theme/?utm_source=lite_upgrade' );
 	$submenu['themes.php'][] = array( __( 'Theme Upgrade', 'portfolio-lite' ), 'manage_options', $upgrade_link );
 }
 add_action( 'admin_menu', 'portfolio_lite_upgrade_link' );
@@ -299,7 +318,7 @@ add_action( 'wp_head', 'portfolio_lite_custom_styles', 100 );
 
 /** Function portfolio_lite_admin_notice */
 function portfolio_lite_admin_notice() {
-	if ( ! PAnD::is_admin_notice_active( 'notice-portfolio-lite-30' ) ) {
+	if ( ! PAnD::is_admin_notice_active( 'notice-portfolio-lite-forever' ) ) {
 		return;
 	}
 	?>
@@ -330,7 +349,7 @@ function portfolio_lite_admin_notice() {
 		return t;
 	}(document, "script", "twitter-wjs"));</script>
 
-	<div data-dismissible="notice-portfolio-lite-30" class="notice updated is-dismissible">
+	<div data-dismissible="notice-portfolio-lite-forever" class="notice updated is-dismissible">
 
 		<p><?php printf( __( 'Enter your email to receive updates and information from <a href="%1$s" target="_blank">Organic Themes</a>. For instructions please refer to our <a href="%2$s" target="_blank">theme setup guide</a>. Upgrade to <a href="%3$s" target="_blank">premium version</a> for more options and support.', 'portfolio-lite' ), 'https://organicthemes.com/themes/', 'https://organicthemes.com/the-free-wordpress-portfolio-lite-theme/', 'https://organicthemes.com/theme/portfolio-theme/' ); ?></p>
 
@@ -431,18 +450,8 @@ add_action( 'widgets_init', 'portfolio_lite_widgets_init' );
 
 if ( ! function_exists( 'portfolio_lite_posted_on' ) ) :
 
-/** Function portfolio_lite_posted_on */
-function portfolio_lite_posted_on() {
-	if ( get_the_modified_time() != get_the_time() ) {
-		printf( __( '<span class="%1$s">Updated:</span> %2$s', 'portfolio-lite' ),
-			'meta-prep meta-prep-author',
-			sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
-				esc_url( get_permalink() ),
-				esc_attr( get_the_modified_time() ),
-				esc_attr( get_the_modified_date() )
-			)
-		);
-	} else {
+	/** Function portfolio_lite_posted_on */
+	function portfolio_lite_posted_on() {
 		printf( __( '<span class="%1$s">Posted:</span> %2$s', 'portfolio-lite' ),
 			'meta-prep meta-prep-author',
 			sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
@@ -452,7 +461,7 @@ function portfolio_lite_posted_on() {
 			)
 		);
 	}
-}
+
 endif;
 
 /*
@@ -700,8 +709,13 @@ function portfolio_lite_body_class( $classes ) {
 		$classes[] = 'portfolio-no-desc';
 	}
 
+	if ( is_page_template( 'template-blog.php' ) ) {
+		$classes[] = 'archive';
+	}
+
 	if ( ! is_single() ) {
-		$classes[] = 'portfolio-not-single'; }
+		$classes[] = 'portfolio-not-single';
+	}
 
 	if ( is_singular() && ! has_post_thumbnail() ) {
 		$classes[] = 'portfolio-no-img'; }

@@ -172,7 +172,7 @@
 			<!-- BEGIN #masthead -->
 			<div id="masthead">
 
-				<?php if ( is_page_template( 'template-slideshow-gallery.php' ) ) { ?>
+				<?php if ( is_page_template( 'template-slideshow-gallery.php' ) || is_page_template( 'template-blog.php' ) ) { ?>
 					<div class="site-title-slideshow">
 						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo wp_kses_post( get_bloginfo( 'name' ) ); ?></a></p>
 						<h1 class="title"><?php the_title(); ?></h1>

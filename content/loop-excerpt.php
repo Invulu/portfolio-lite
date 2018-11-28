@@ -15,6 +15,16 @@
 
 		<h1 class="headline"><?php the_title(); ?></h1>
 
+		<!-- BEGIN .post-meta -->
+		<div class="post-meta">
+			<!-- BEGIN .post-date -->
+			<div class="post-date">
+				<p><?php portfolio_lite_posted_on(); ?> <em><?php esc_html_e( 'by', 'portfolio-lite' ); ?></em> <?php esc_url( the_author_posts_link() ); ?></p>
+			<!-- END .post-date -->
+			</div>
+		<!-- END .post-meta -->
+		</div>
+
 		<?php if ( ! empty( $post->post_excerpt ) ) { ?>
 		<!-- BEGIN .excerpt -->
 		<div class="excerpt">
