@@ -100,81 +100,6 @@ if ( ! function_exists( 'portfolio_lite_setup' ) ) :
 		);
 		add_theme_support( 'custom-background', $defaults );
 
-		/*
-		 * Enable theme starter content.
-		 */
-		add_theme_support( 'starter-content', array(
-
-			// Set default theme options.
-			'options' => array(
-				'custom_logo' => '{{logo}}',
-				'show_on_front' => 'page',
-				'page_on_front' => '{{home}}',
-				'page_for_posts' => '{{blog}}',
-				'blogname' => __( 'Portfolio Lite Theme', 'portfolio-lite' ),
-				'blogdescription' => __( 'My <b>Awesome</b> Organic Theme', 'portfolio-lite' ),
-			),
-
-			// Starter pages to include.
-			'posts' => array(
-				'home' => array(
-					'template' => 'template-slideshow-gallery.php',
-				),
-				'about' => array(
-					'thumbnail' => '{{image-about}}',
-				),
-				'services' => array(
-					'post_type' => 'page',
-					'post_title' => __( 'Services', 'portfolio-lite' ),
-					'post_content' => __( '<p>This is an example services page. You may want to write about the various services your company provides.</p>', 'portfolio-lite' ),
-					'thumbnail' => '{{image-services}}',
-				),
-				'blog',
-				'contact' => array(
-					'thumbnail' => '{{image-contact}}',
-				),
-			),
-
-			// Starter attachments for default images.
-			'attachments' => array(
-				'logo' => array(
-					'post_title' => __( 'Logo', 'portfolio-lite' ),
-					'file' => 'images/logo.png',
-				),
-				'image-about' => array(
-					'post_title' => __( 'About Image', 'portfolio-lite' ),
-					'file' => 'images/image-about.jpg',
-				),
-				'image-services' => array(
-					'post_title' => __( 'Services Image', 'portfolio-lite' ),
-					'file' => 'images/image-services.jpg',
-				),
-				'image-contact' => array(
-					'post_title' => __( 'Contact Image', 'portfolio-lite' ),
-					'file' => 'images/image-contact.jpg',
-				),
-			),
-
-			// Add pages to primary navigation menu.
-			'nav_menus' => array(
-				'main-menu' => array(
-					'name' => __( 'Primary Navigation', 'portfolio-lite' ),
-					'items' => array(
-						'link_home',
-						'page_about',
-						'page_services' => array(
-							'type' => 'post_type',
-							'object' => 'page',
-							'object_id' => '{{services}}',
-						),
-						'page_blog',
-						'page_contact',
-					),
-				),
-			),
-
-		));
-
 	}
 endif; // End function portfolio_lite_setup.
 add_action( 'after_setup_theme', 'portfolio_lite_setup' );
@@ -236,14 +161,29 @@ add_action( 'admin_enqueue_scripts', 'portfolio_lite_enqueue_admin_scripts' );
 -------------------------------------------------------------------------------------------------------
 */
 
-/**
- * Enqueue WordPress theme styles within Gutenberg.
- */
-function portfolio_lite_gutenberg_styles() {
-	// Load the theme styles within Gutenberg.
-	wp_enqueue_style( 'portfolio-lite-gutenberg', get_theme_file_uri( '/css/gutenberg.css' ), false, '1.0', 'all' );
+if ( ! function_exists( 'portfolio_lite_gutenberg_styles' ) ) {
+
+	/**
+	 * Enqueue WordPress theme styles within Gutenberg.
+	 */
+	function portfolio_lite_gutenberg_styles() {
+		// Load the theme styles within Gutenberg.
+		wp_enqueue_style(
+			'portfolio-lite-gutenberg',
+			get_theme_file_uri( '/css/gutenberg.css' ),
+			false,
+			'1.0',
+			'all'
+		);
+		wp_enqueue_style(
+			'font-awesome',
+			get_template_directory_uri() . '/css/font-awesome.css',
+			array( 'portfolio-lite-gutenberg' ),
+			'1.0'
+		);
+	}
 }
-add_action( 'enqueue_block_editor_assets', 'portfolio_lite_gutenberg_styles' );
+add_action( 'enqueue_block_editor_assets', 'portfolio_lite_gutenberg_styles', 10 );
 
 /*
 -------------------------------------------------------------------------------------------------------

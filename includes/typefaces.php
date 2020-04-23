@@ -20,13 +20,13 @@ function portfolio_lite_fonts_url() {
 	* into your own language.
 	*/
 
-	$raleway = _x( 'on', 'Raleway font: on or off', 'portfolio-lite' );
-	$roboto = _x( 'on', 'Roboto font: on or off', 'portfolio-lite' );
-	$open_sans = _x( 'on', 'Open Sans font: on or off', 'portfolio-lite' );
-	$montserrat = _x( 'on', 'Montserrat font: on or off', 'portfolio-lite' );
+	$raleway     = _x( 'on', 'Raleway font: on or off', 'portfolio-lite' );
+	$roboto      = _x( 'on', 'Roboto font: on or off', 'portfolio-lite' );
+	$open_sans   = _x( 'on', 'Open Sans font: on or off', 'portfolio-lite' );
+	$montserrat  = _x( 'on', 'Montserrat font: on or off', 'portfolio-lite' );
 	$droid_serif = _x( 'on', 'Droid Serif font: on or off', 'portfolio-lite' );
-	$cabin = _x( 'on', 'Cabin font: on or off', 'portfolio-lite' );
-	$lato = _x( 'on', 'Lato font: on or off', 'portfolio-lite' );
+	$cabin       = _x( 'on', 'Cabin font: on or off', 'portfolio-lite' );
+	$lato        = _x( 'on', 'Lato font: on or off', 'portfolio-lite' );
 
 	if ( 'off' !== $raleway || 'off' !== $roboto || 'off' !== $open_sans || 'off' !== $montserrat || 'off' !== $droid_serif || 'off' !== $cabin || 'off' !== $lato ) {
 
@@ -61,8 +61,8 @@ function portfolio_lite_fonts_url() {
 		}
 
 		$query_args = array(
-			'family' => urlencode( implode( '|', $font_families ) ),
-			'subset' => urlencode( 'latin,latin-ext' ),
+			'family' => rawurlencode( implode( '|', $font_families ) ),
+			'subset' => rawurlencode( 'latin,latin-ext' ),
 		);
 
 		$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
@@ -77,7 +77,7 @@ function portfolio_lite_fonts_url() {
  * @since Portfolio Lite 1.0
  */
 function portfolio_lite_scripts_styles() {
-	wp_enqueue_style( 'portfolio-fonts', portfolio_lite_fonts_url(), array(), null );
+	wp_enqueue_style( 'portfolio-lite-fonts', portfolio_lite_fonts_url(), array(), '1.0' );
 }
 add_action( 'wp_enqueue_scripts', 'portfolio_lite_scripts_styles' );
 
@@ -90,3 +90,16 @@ function portfolio_lite_editor_styles() {
 	add_editor_style( array( 'style.css', portfolio_lite_fonts_url() ) );
 }
 add_action( 'after_setup_theme', 'portfolio_lite_editor_styles' );
+
+if ( ! function_exists( 'portfolio_lite_block_editor_styles' ) ) {
+
+	/**
+	 * Add Google Scripts for use with the block editor
+	 *
+	 * @since Organic Origin 1.0
+	 */
+	function portfolio_lite_block_editor_styles() {
+		wp_enqueue_style( 'portfolio-lite-fonts', portfolio_lite_fonts_url(), array(), '1.0' );
+	}
+}
+add_action( 'enqueue_block_editor_assets', 'portfolio_lite_block_editor_styles' );
