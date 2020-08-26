@@ -1,10 +1,9 @@
 === Portfolio Lite ===
 
-Version: 1.4
+Version: 1.4.1
 Contributors: organicthemes, itsdavidmorgan
 Tags: portfolio, photography, blog, one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, custom-logo, featured-images, featured-image-header, flexible-header, full-width-template, translation-ready, sticky-post, threaded-comments, editor-style, theme-options
 Requires at least: 4.8
-Tested up to: 5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -48,12 +47,6 @@ GNU General Public License for more details.
 * close.svg: Created by David Morgan, http://dav.idmorgan.com. License: GPLv2.
 * menu.png: Created by David Morgan, http://dav.idmorgan.com. License: GPLv2.
 * screenshot.png: Created by David Morgan, http://dav.idmorgan.com. License: GPLv2.
-* Image in screenshot: Source: Unsplash, https://unsplash.com/photos/bq-1seg1cPI. License: Creative Commons Zero license, https://unsplash.com/license.
-* default-header.jpg: Source: Unsplash, https://unsplash.com/photos/Rb_wkrNoMnA. License: Creative Commons Zero license, https://unsplash.com/license.
-* default-image.jpg: Source: Unsplash, https://unsplash.com/photos/UmWW77lYEcA. License: Creative Commons Zero license, https://unsplash.com/license.
-* image-about.jpg: Source: Unsplash, https://unsplash.com/photos/BHNxfaeNCTI. License: Creative Commons Zero license, https://unsplash.com/license.
-* image-services.jpg: Source: Unsplash, https://unsplash.com/photos/JWiMShWiF14. License: Creative Commons Zero license, https://unsplash.com/license.
-* image-contact.jpg: Source: Unsplash, https://unsplash.com/photos/SP3J_BJeQqE. License: Creative Commons Zero license, https://unsplash.com/license.
 
 == Font Awesome ==
 
@@ -68,6 +61,13 @@ GNU General Public License for more details.
 * jquery.flexslider.js, Licensed under GPLv2 or later.
 
 == Changelog ==
+
+== 1.4.1 ==
+* Added new stylesheet tags
+* Better handling of plugin recommendation
+* Added wp_body_open action in header.php
+* Updated footer credits
+* General cleanup
 
 == 1.4 ==
 * Several Gutenberg optimization updates

@@ -23,6 +23,8 @@
 
 <body <?php body_class(); ?>>
 
+<?php wp_body_open(); ?>
+
 <?php $header_image = get_header_image(); ?>
 <?php $blog = is_home(); ?>
 
@@ -188,7 +190,7 @@
 				<?php } ?>
 
 				<p class="site-description">
-					<?php echo html_entity_decode( esc_html( get_bloginfo( 'description' ) ) ); ?>
+					<?php echo wp_kses_post( get_bloginfo( 'description' ) ); ?>
 				</p>
 
 			<!-- END #masthead -->
@@ -224,7 +226,7 @@
 					<?php } ?>
 
 					<p class="site-description">
-						<?php echo html_entity_decode( esc_html( get_bloginfo( 'description' ) ) ); ?>
+						<?php echo wp_kses_post( get_bloginfo( 'description' ) ); ?>
 					</p>
 
 				<!-- END #masthead -->
@@ -255,7 +257,7 @@
 				<?php } ?>
 
 				<p class="site-description">
-					<?php echo html_entity_decode( esc_html( get_bloginfo( 'description' ) ) ); ?>
+					<?php echo wp_kses_post( get_bloginfo( 'description' ) ); ?>
 				</p>
 
 			<!-- END #masthead -->

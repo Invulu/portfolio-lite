@@ -12,32 +12,37 @@
 <div class="slideshow">
 
 	<!-- BEGIN .flexslider -->
-	<div class="flexslider loading" data-speed="<?php echo get_theme_mod( 'portfolio_lite_transition_interval', '12000' ); ?>" data-transition="<?php echo get_theme_mod( 'portfolio_lite_transition_style', 'fade' ); ?>">
+	<div class="flexslider loading" data-speed="<?php echo esc_html( get_theme_mod( 'portfolio_lite_transition_interval', '12000' ) ); ?>" data-transition="<?php echo esc_html( get_theme_mod( 'portfolio_lite_transition_style', 'fade' ) ); ?>">
 
 		<div class="preloader"></div>
 
 		<!-- BEGIN .slides -->
 		<ul class="slides">
 
-			<?php while ( have_posts() ) : the_post(); if ( get_post_gallery() ) : ?>
+			<?php
+			while ( have_posts() ) :
+				the_post(); if ( get_post_gallery() ) :
+					?>
 
-				<?php $gallery = get_post_gallery( $post, false );
-				$ids = explode( ',', $gallery['ids'] ); ?>
+					<?php
+					$gallery = get_post_gallery( $post, false );
+					$ids     = explode( ',', $gallery['ids'] );
+					?>
 
-				<?php foreach ( $ids as $id ) { ?>
-					<?php $link = wp_get_attachment_url( $id ); ?>
-					<?php $image = get_post( $id ); ?>
-					<?php $image_title = $image->post_title; ?>
-					<?php $image_caption = $image->post_excerpt; ?>
+					<?php foreach ( $ids as $id ) { ?>
+						<?php $link = wp_get_attachment_url( $id ); ?>
+						<?php $image = get_post( $id ); ?>
+						<?php $image_title = $image->post_title; ?>
+						<?php $image_caption = $image->post_excerpt; ?>
 					<li>
 						<div class="feature-img bg-img" style="background-image: url(<?php echo esc_url( $link ); ?>);">
 							<img src="<?php echo esc_url( $link ); ?>" />
 						</div>
-						<h2 class="title"><?php echo $image_caption; ?></h2>
+						<h2 class="title"><?php echo wp_kses_post( $image_caption ); ?></h2>
 					</li>
 				<?php } ?>
 
-			<?php endif; ?>
+							<?php endif; ?>
 			<?php endwhile; ?>
 			<?php wp_reset_postdata(); ?>
 

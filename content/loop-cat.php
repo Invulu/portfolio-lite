@@ -37,8 +37,8 @@
 		<?php } else { ?>
 			<div class="feature-img">
 				<a class="img-text" href="<?php the_permalink(); ?>" rel="bookmark"><h2 class="title"><?php the_title(); ?></h2></a>
-				<div class="bg-img" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/placeholder.jpg);">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/placeholder.jpg" alt="Placeholder" />
+				<div class="bg-img" style="background-image: url(<?php echo esc_url( get_template_directory_uri() ); ?>/images/placeholder.jpg);">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/placeholder.jpg" alt="Placeholder" />
 				</div>
 			</div>
 		<?php } ?>
@@ -51,10 +51,12 @@
 <!-- END .showcase-posts -->
 </div>
 
-<?php the_posts_pagination( array(
-	'prev_text' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Previous Page', 'portfolio-lite' ) . ' </span>&laquo;',
-	'next_text' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Next Page', 'portfolio-lite' ) . ' </span>&raquo;',
-) ); ?>
+	<?php
+	the_posts_pagination( array(
+		'prev_text' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Previous Page', 'portfolio-lite' ) . ' </span>&laquo;',
+		'next_text' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Next Page', 'portfolio-lite' ) . ' </span>&raquo;',
+	));
+	?>
 
 <?php else : ?>
 
