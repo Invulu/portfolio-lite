@@ -7,7 +7,7 @@
 	Author URI: https://organicthemes.com
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.4.1
+	Version: 1.4.2
 	Tested up to: 5.5
 	Requires PHP: 5.3.29
 	Text Domain: portfolio-lite
@@ -486,6 +486,7 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 	background: #000000;
 	padding: 24px;
 	box-sizing: border-box;
+	touch-action: pan-x;
 }
 .admin-bar #slide-menu {
 	padding-top: 56px;
