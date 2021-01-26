@@ -82,8 +82,8 @@
 	 */
 	wp.customize( 'background_color', function( value ) {
 		value.bind( function( to ) {
-			$('body, .slideout-panel, .post-date p').css('background-color', to );
-			$('body, .slideout-panel, .post-date p').colourBrightness();
+			$('body, .sidr, .post-date p').css('background-color', to );
+			$('body, .sidr, .post-date p').colourBrightness();
 		} );
 	} );
 

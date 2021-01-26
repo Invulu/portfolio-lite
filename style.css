@@ -7,8 +7,8 @@
 	Author URI: https://organicthemes.com
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.4.2
-	Tested up to: 5.5
+	Version: 1.5
+	Tested up to: 5.6
 	Requires PHP: 5.3.29
 	Text Domain: portfolio-lite
 	Domain Path: /languages/
@@ -479,22 +479,17 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 	border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 	border-radius: 2px;
 }
-
-/* Slideout Menu */
-
-#slide-menu {
-	background: #000000;
-	padding: 24px;
-	box-sizing: border-box;
-	touch-action: pan-x;
-}
-.admin-bar #slide-menu {
-	padding-top: 56px;
-}
 .icon-menu-close {
 	display: none;
 }
-button.menu-toggle {
+
+/* Slideout Menu */
+
+#side-menu {
+	display: block;
+}
+#menu-toggle {
+	float: right;
 	display: block;
 	background: none;
 	position: relative;
@@ -505,71 +500,99 @@ button.menu-toggle {
 	z-index: 9;
 	cursor: pointer;
 }
-button.menu-toggle svg {
+#menu-toggle svg {
 	fill: rgba(0, 0, 0, 0.4);
 }
-button.menu-toggle:hover svg {
+#menu-toggle:hover svg {
 	fill: rgba(0, 0, 0, 1);
 }
-.slideout-menu {
+.sidr {
+	display: block;
+	background: #000000;
+	color: rgba(255, 255, 255, 0.4);
 	position: fixed;
 	top: 0;
-	bottom: 0;
-	width: 256px;
-	min-height: 100vh;
-	overflow-y: scroll;
-	-webkit-overflow-scrolling: touch;
-	z-index: 0;
-	display: none;
+	height: 100%;
+	z-index: 9;
+	width: 260px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	box-sizing: border-box;
 }
-.slideout-menu-left {
-	left: 0;
+.sidr-inner {
+	padding: 24px;
+	box-sizing: border-box;
 }
-.slideout-menu-right {
-	right: 0;
+.admin-bar .sidr-inner {
+	margin-top: 32px;
 }
-.slideout-panel {
+.sidr.right {
+	left: auto;
+	right: -260px;
+	border-left: 1px solid rgba(0, 0, 0, 0.12);
+}
+.sidr.left {
+	left: -260px;
+	right: auto;
+	border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
+.sidr p {
+	margin: 6px 0px;
+	padding: 0px;
+}
+.sidr ul {
+	margin: 0px;
+	padding: 0px;
+}
+.sidr ul.sidr-class-menu {
+	margin: 0px;
+}
+.sidr li.sidr-class-menu-item-has-children > a::after {
+	background: none;
 	position: relative;
-	z-index: 1;
-	will-change: transform;
-	min-height: 100vh;
+	content: '\f107';
+	font-family: 'FontAwesome';
+	font-weight: 400;
+	margin-left: 6px;
 }
-.slideout-open,
-.slideout-open body,
-.slideout-open .slideout-panel {
-	overflow: hidden;
+.sidr li {
+	position: relative;
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
-.slideout-open .slideout-menu {
+.sidr li a {
 	display: block;
-}
-#slide-menu ul.menu li a,
-#slide-menu ul.menu li a:link,
-#slide-menu ul.menu li a:visited {
-	color: rgba(255, 255, 255, 0.4);
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.1;
+	text-decoration: none;
+	padding: 12px 0px;
 	border-left: 3px solid rgba(255, 255, 255, 0);
 	border-right: none;
 }
-#slide-menu ul.menu li a:hover,
-#slide-menu ul.menu li a:active,
-#slide-menu ul.menu li a:focus {
-	color: rgba(255, 255, 255, 1);
-	border-left: 3px solid rgba(255, 255, 255, 1);
-	border-right: none;
-}
-#slide-menu ul.menu li li a,
-#slide-menu ul.menu li li a:link,
-#slide-menu ul.menu li li a:visited {
-	margin: 0px 0px 0px 18px;
+.sidr li li a {
+	font-size: 0.85rem;
+	line-height: 1;
+	margin-left: 18px;
+	padding: 8px;
 	border-left: 1px solid rgba(255, 255, 255, 0.24);
 	border-right: none;
 }
-#slide-menu ul.menu li li a::after {
-	content: none;
-	margin-left: 0px;
-}
-#slide-menu ul.menu li li a::before {
+.sidr li li a::before {
 	content: '- ';
 	margin-right: 4px;
+}
+.sidr li a,
+.sidr li a:link,
+.sidr li a:visited {
+	color: rgba(255, 255, 255, 0.4);
+}
+.sidr li a:hover,
+.sidr li a:active,
+.sidr li a:focus {
+	color: rgba(255, 255, 255, 1);
 }
 
 /* General Menu Styles */
@@ -2425,6 +2448,7 @@ a, button, .button, #submit, #searchsubmit {
 /* Media */
 
 .wp-block-image {
+	text-align: center;
 	max-width: none;
 	margin-left: auto;
 	margin-right: auto;
@@ -2432,6 +2456,9 @@ a, button, .button, #submit, #searchsubmit {
 }
 .wp-block-image img {
 	display: block;
+}
+.wp-block-image figcaption {
+	margin-top: 8px;
 }
 .wp-block-embed {
 	margin-left: auto;
@@ -2459,6 +2486,9 @@ a, button, .button, #submit, #searchsubmit {
 .wp-block-cover .wp-block-cover__inner-container {
 	padding: 36px;
 	box-sizing: border-box;
+}
+.wp-block-column .wp-block-cover .wp-block-cover__inner-container {
+	padding: 0px;
 }
 .wp-block-cover .wp-block-cover__inner-container p {
 	margin-top: 24px;

@@ -65,8 +65,8 @@ if ( ! function_exists( 'portfolio_lite_setup' ) ) :
 		 * Enable support for custom menus.
 		 */
 		register_nav_menus( array(
-			'main-menu' => esc_html__( 'Main Menu', 'portfolio-lite' ),
-			'slide-menu' => esc_html__( 'Slide Menu', 'portfolio-lite' ),
+			'main-menu'   => esc_html__( 'Main Menu', 'portfolio-lite' ),
+			'mobile-menu' => esc_html__( 'Mobile Menu', 'portfolio-lite' ),
 			'social-menu' => esc_html__( 'Social Menu', 'portfolio-lite' ),
 			'footer-menu' => esc_html__( 'Footer Menu', 'portfolio-lite' ),
 		));
@@ -116,23 +116,22 @@ if ( ! function_exists( 'portfolio_lite_enqueue_scripts' ) ) {
 	function portfolio_lite_enqueue_scripts() {
 
 		// Enqueue Styles.
-		wp_enqueue_style( 'portfolio-style', get_stylesheet_uri() );
+		wp_enqueue_style( 'portfolio-style', get_stylesheet_uri(), '', '1.0' );
 		wp_enqueue_style( 'portfolio-style-conditionals', get_template_directory_uri() . '/css/style-conditionals.css', array( 'portfolio-style' ), '1.0' );
 		wp_enqueue_style( 'portfolio-style-mobile', get_template_directory_uri() . '/css/style-mobile.css', array( 'portfolio-style' ), '1.0' );
 		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.css', array( 'portfolio-style' ), '1.0' );
 
 		// Resgister Scripts.
-		wp_register_script( 'jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), '1.0' );
-		wp_register_script( 'jquery-colourbrightness', get_template_directory_uri() . '/js/jquery.colourbrightness.js', array( 'jquery' ), '1.0' );
+		wp_register_script( 'jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), '1.0', true );
+		wp_register_script( 'jquery-colourbrightness', get_template_directory_uri() . '/js/jquery.colourbrightness.js', array( 'jquery' ), '1.0', true );
+		wp_register_script( 'jquery-sidr', get_template_directory_uri() . '/js/jquery.sidr.js', array( 'jquery' ), '1.0', true );
 
 		// Enqueue Scripts.
-		wp_enqueue_script( 'hoverIntent' );
-		wp_enqueue_script( 'portfolio-slideout', get_template_directory_uri() . '/js/slideout.js', array(), '1.0' );
-		wp_enqueue_script( 'portfolio-custom', get_template_directory_uri() . '/js/jquery.custom.js', array( 'jquery', 'jquery-fitvids', 'jquery-colourbrightness' ), '1.0', true );
+		wp_enqueue_script( 'portfolio-custom', get_template_directory_uri() . '/js/jquery.custom.js', array( 'jquery', 'jquery-sidr', 'jquery-fitvids', 'jquery-colourbrightness' ), '1.0', true );
 
 		// Load Flexslider on front page and slideshow page template.
 		if ( is_single() || is_page_template( 'template-slideshow-gallery.php' ) ) {
-			wp_enqueue_script( 'jquery-flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', array( 'jquery' ), '20130729' );
+			wp_enqueue_script( 'jquery-flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', array( 'jquery' ), '2.7.2', true );
 		}
 
 		// Load single scripts only on single pages.
@@ -215,12 +214,12 @@ add_action( 'admin_menu', 'portfolio_lite_upgrade_link' );
  * Changes styles upon user defined options.
  */
 function portfolio_lite_custom_styles() {
-	$bg_color = get_theme_mod( 'background_color', 'ffffff' );
-	$display_title = get_theme_mod( 'portfolio_lite_site_title', '1' );
+	$bg_color        = get_theme_mod( 'background_color', 'ffffff' );
+	$display_title   = get_theme_mod( 'portfolio_lite_site_title', '1' );
 	$display_tagline = get_theme_mod( 'portfolio_lite_site_tagline', '1' );
 	?>
 	<style>
-		.slideout-panel, #wrapper .post-date p {
+		#wrapper .post-date p {
 			background-color: #<?php echo esc_attr( $bg_color ); ?>;
 		}
 		#wrapper .site-title {

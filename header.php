@@ -28,58 +28,6 @@
 <?php $header_image = get_header_image(); ?>
 <?php $blog = is_home(); ?>
 
-<?php if ( has_nav_menu( 'slide-menu' ) ) { ?>
-
-<!-- BEGIN #slide-menu -->
-<nav id="slide-menu" class="slideout-menu">
-
-	<?php
-		wp_nav_menu( array(
-			'theme_location'		=> 'slide-menu',
-			'title_li'					=> '',
-			'depth'							=> 2,
-			'fallback_cb'			 	=> 'wp_page_menu',
-			'container_class' 	=> '',
-			'menu_class'				=> 'menu',
-			)
-		);
-	?>
-
-<!-- END #slide-menu -->
-</nav>
-
-<?php } elseif ( has_nav_menu( 'main-menu' ) ) { ?>
-
-<!-- BEGIN #slide-menu -->
-<nav id="slide-menu" class="slideout-menu">
-
-	<?php
-		wp_nav_menu( array(
-			'theme_location'		=> 'main-menu',
-			'title_li'					=> '',
-			'depth'							=> 2,
-			'fallback_cb'			 	=> 'wp_page_menu',
-			'container_class' 	=> '',
-			'menu_class'				=> 'menu',
-			)
-		);
-	?>
-
-<!-- END #slide-menu -->
-</nav>
-
-<?php } else { ?>
-
-<!-- BEGIN #slide-menu -->
-<nav id="slide-menu" class="slideout-menu">
-
-	<ul class="menu"><?php wp_list_pages( 'title_li=&depth=2' ); ?></ul>
-
-<!-- END #slide-menu -->
-</nav>
-
-<?php } ?>
-
 <!-- BEGIN #wrapper -->
 <div id="wrapper">
 
@@ -97,22 +45,26 @@
 
 			<?php if ( has_nav_menu( 'social-menu' ) ) { ?>
 
-				<?php wp_nav_menu( array(
-					'theme_location' => 'social-menu',
-					'title_li' => '',
-					'depth' => 1,
-					'container_class' => 'social-menu',
-					'menu_class'      => 'social-icons',
-					'link_before'     => '<span>',
-					'link_after'      => '</span>',
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location'  => 'social-menu',
+						'title_li'        => '',
+						'depth'           => 1,
+						'container_class' => 'social-menu',
+						'menu_class'      => 'social-icons',
+						'link_before'     => '<span>',
+						'link_after'      => '</span>',
 					)
-				); ?>
+				);
+				?>
 
 			<?php } ?>
 
-			<button class="menu-toggle">
+			<a id="menu-toggle" class="menu-toggle" href="#sidr">
+				<span class="screen-reader-text"><?php esc_html_e( 'Toggle Side Menu', 'portfolio-lite' ); ?></span>
 				<svg class="icon-menu-open" version="1.1" id="icon-open" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-					 width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+					width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
 					<rect y="2" width="24" height="2"/>
 					<rect y="11" width="24" height="2"/>
 					<rect y="20" width="24" height="2"/>
@@ -121,7 +73,7 @@
 					<rect x="0" y="11" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 12 28.9706)" width="24" height="2"/>
 					<rect x="0" y="11" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 28.9706 12)" width="24" height="2"/>
 				</svg>
-			</button>
+			</a>
 
 		<!-- END .top-navigation -->
 		</div>
@@ -143,27 +95,51 @@
 
 			<?php } ?>
 
-			<?php if ( has_nav_menu( 'main-menu' ) ) { ?>
+			<?php if ( wp_is_mobile() && has_nav_menu( 'mobile-menu' ) ) { ?>
 
-				<!-- BEGIN #navigation -->
-				<nav id="navigation">
+			<!-- BEGIN #navigation -->
+			<nav id="navigation" class="navigation-main" role="navigation" aria-label="<?php esc_attr_e( 'Primary Navigation', 'portfolio-lite' ); ?>">
 
-					<?php
-						wp_nav_menu( array(
-							'theme_location'		=> 'main-menu',
-							'title_li'					=> '',
-							'depth'							=> 2,
-							'fallback_cb'			 	=> 'wp_page_menu',
-							'container_class' 	=> '',
-							'menu_class'				=> 'menu',
-							)
-						);
-					?>
+				<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'mobile-menu',
+							'title_li'       => '',
+							'depth'          => 2,
+							'fallback_cb'    => 'wp_page_menu',
+							'container'      => false,
+							'menu_class'     => 'menu',
+							'link_before'    => '<span role="menuitem">',
+							'link_after'     => '</span>',
+						)
+					);
+				?>
 
-				<!-- END #navigation -->
-				</nav>
+			<!-- END #navigation -->
+			</nav>
 
-			<?php } ?>
+		<?php } elseif ( has_nav_menu( 'main-menu' ) ) { ?>
+
+			<!-- BEGIN #navigation -->
+			<nav id="navigation" class="navigation-main" role="navigation" aria-label="<?php esc_attr_e( 'Primary Navigation', 'portfolio-lite' ); ?>">
+
+				<?php
+					wp_nav_menu( array(
+						'theme_location' => 'main-menu',
+						'title_li'       => '',
+						'depth'          => 2,
+						'fallback_cb'    => 'wp_page_menu',
+						'container'      => false,
+						'menu_class'     => 'menu',
+						'link_before'    => '<span role="menuitem">',
+						'link_after'     => '</span>',
+					) );
+				?>
+
+			<!-- END #navigation -->
+			</nav>
+
+		<?php } ?>
 
 		<!-- END .four columns -->
 		</div>
