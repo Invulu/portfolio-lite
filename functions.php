@@ -354,21 +354,19 @@ require( get_template_directory() . '/includes/persist-admin-notices-dismissal/p
 -------------------------------------------------------------------------------------------------------
 */
 
-/**
- * Changes category IDs to names.
- *
- * @param array $id IDs for categories.
- * @return array
- */
-
 if ( ! function_exists( 'portfolio_lite_cat_id_to_name' ) ) :
-
-function portfolio_lite_cat_id_to_name( $id ) {
-	$cat = get_category( $id );
-	if ( is_wp_error( $cat ) ) {
-		return false; }
-	return $cat->cat_name;
-}
+	/**
+	 * Changes category IDs to names.
+	 *
+	 * @param array $id IDs for categories.
+	 * @return array
+	 */
+	function portfolio_lite_cat_id_to_name( $id ) {
+		$cat = get_category( $id );
+		if ( is_wp_error( $cat ) ) {
+			return false; }
+		return $cat->cat_name;
+	}
 endif;
 
 /*
@@ -379,25 +377,25 @@ endif;
 
 if ( ! function_exists( 'portfolio_lite_widgets_init' ) ) :
 
-/** Function portfolio_lite_widgets_init */
-function portfolio_lite_widgets_init() {
-	register_sidebar(array(
-		'name' => esc_html__( 'Default Sidebar', 'portfolio-lite' ),
-		'id' => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	));
-	register_sidebar(array(
-		'name' => esc_html__( 'Blog Sidebar', 'portfolio-lite' ),
-		'id' => 'sidebar-blog',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	));
-}
+	/** Function portfolio_lite_widgets_init */
+	function portfolio_lite_widgets_init() {
+		register_sidebar(array(
+			'name' => esc_html__( 'Default Sidebar', 'portfolio-lite' ),
+			'id' => 'sidebar-1',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>',
+		));
+		register_sidebar(array(
+			'name' => esc_html__( 'Blog Sidebar', 'portfolio-lite' ),
+			'id' => 'sidebar-blog',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>',
+		));
+	}
 endif;
 add_action( 'widgets_init', 'portfolio_lite_widgets_init' );
 
@@ -429,14 +427,14 @@ endif;
 ------------------------------------------------------------------------------------------------------
 */
 
-if ( ! isset( $content_width ) ) { $content_width = 760; }
-
-if ( ! function_exists( 'portfolio_lite_content_width' ) ) :
-
-/** Function portfolio_lite_content_width */
-function portfolio_lite_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'portfolio_lite_content_width', 760 );
+if ( ! isset( $content_width ) ) {
+	$content_width = 760;
 }
+if ( ! function_exists( 'portfolio_lite_content_width' ) ) :
+	/** Function portfolio_lite_content_width */
+	function portfolio_lite_content_width() {
+		$GLOBALS['content_width'] = apply_filters( 'portfolio_lite_content_width', 760 );
+	}
 endif;
 add_action( 'after_setup_theme', 'portfolio_lite_content_width', 0 );
 
@@ -567,36 +565,34 @@ add_filter( 'the_content_more_link', 'portfolio_lite_more_link', 10, 2 );
 -------------------------------------------------------------------------------------------------------
 */
 
-/**
- * Adds custom page links to pages.
- *
- * @param array $args for page links.
- * @return array
- */
-
 if ( ! function_exists( 'portfolio_lite_wp_link_pages_args_prevnext_add' ) ) :
+	/**
+	 * Adds custom page links to pages.
+	 *
+	 * @param array $args for page links.
+	 * @return array
+	 */
+	function portfolio_lite_wp_link_pages_args_prevnext_add( $args ) {
+		global $page, $numpages, $more, $pagenow;
 
-function portfolio_lite_wp_link_pages_args_prevnext_add( $args ) {
-	global $page, $numpages, $more, $pagenow;
+		if ( ! $args['next_or_number'] == 'next_and_number' ) {
+			return $args; }
 
-	if ( ! $args['next_or_number'] == 'next_and_number' ) {
-		return $args; }
+		$args['next_or_number'] = 'number'; // Keep numbering for the main part.
+		if ( ! $more ) {
+			return $args; }
 
-	$args['next_or_number'] = 'number'; // Keep numbering for the main part.
-	if ( ! $more ) {
-		return $args; }
+		if ( $page - 1 ) { // There is a previous page.
+			$args['before'] .= _wp_link_page( $page - 1 )
+				. $args['link_before'] . $args['previouspagelink'] . $args['link_after'] . '</a>'; }
 
-	if ( $page -1 ) { // There is a previous page.
-		$args['before'] .= _wp_link_page( $page -1 )
-			. $args['link_before']. $args['previouspagelink'] . $args['link_after'] . '</a>'; }
+		if ( $page < $numpages ) { // There is a next page.
+			$args['after'] = _wp_link_page( $page + 1 )
+				. $args['link_before'] . $args['nextpagelink'] . $args['link_after'] . '</a>'
+				. $args['after']; }
 
-	if ( $page < $numpages ) { // There is a next page.
-		$args['after'] = _wp_link_page( $page + 1 )
-			. $args['link_before'] . $args['nextpagelink'] . $args['link_after'] . '</a>'
-			. $args['after']; }
-
-	return $args;
-}
+		return $args;
+	}
 endif;
 add_filter( 'wp_link_pages_args', 'portfolio_lite_wp_link_pages_args_prevnext_add' );
 
@@ -632,89 +628,88 @@ add_filter( 'the_content', 'portfolio_lite_remove_gallery' );
 -------------------------------------------------------------------------------------------------------
 */
 
-/**
- * Adds custom classes to the array of body classes.
- *
- * @param array $classes Classes for the body element.
- * @return array
- */
-
 if ( ! function_exists( 'portfolio_lite_body_class' ) ) :
 
-function portfolio_lite_body_class( $classes ) {
+	/**
+	 * Adds custom classes to the array of body classes.
+	 *
+	 * @param array $classes Classes for the body element.
+	 * @return array
+	 */
+	function portfolio_lite_body_class( $classes ) {
 
-	$header_image = get_header_image();
-	$post_pages = is_home() || is_archive() || is_search() || is_attachment();
-	$slide_pages = is_page_template( 'template-slideshow-gallery.php' );
+		$header_image = get_header_image();
+		$post_pages   = is_home() || is_archive() || is_search() || is_attachment();
+		$slide_pages  = is_page_template( 'template-slideshow-gallery.php' );
 
-	if ( $slide_pages ) {
-		$classes[] = 'portfolio-slideshow'; }
+		if ( $slide_pages ) {
+			$classes[] = 'portfolio-slideshow'; }
 
-	if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
-		$classes[] = 'portfolio-has-logo';
-	} else {
-		$classes[] = 'portfolio-no-logo';
+		if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
+			$classes[] = 'portfolio-has-logo';
+		} else {
+			$classes[] = 'portfolio-no-logo';
+		}
+
+		if ( '' != get_theme_mod( 'portfolio_lite_site_title', '1' ) ) {
+			$classes[] = 'portfolio-has-title';
+		} else {
+			$classes[] = 'portfolio-no-title';
+		}
+
+		if ( '' != get_theme_mod( 'portfolio_lite_site_tagline', '1' ) ) {
+			$classes[] = 'portfolio-has-desc';
+		} else {
+			$classes[] = 'portfolio-no-desc';
+		}
+
+		if ( is_page_template( 'template-blog.php' ) ) {
+			$classes[] = 'archive';
+		}
+
+		if ( ! is_single() ) {
+			$classes[] = 'portfolio-not-single';
+		}
+
+		if ( is_singular() && ! has_post_thumbnail() ) {
+			$classes[] = 'portfolio-no-img'; }
+
+		if ( is_singular() && has_post_thumbnail() ) {
+			$classes[] = 'portfolio-has-img'; }
+
+		if ( $post_pages && ! empty( $header_image ) || is_page() && ! has_post_thumbnail() && ! empty( $header_image ) || is_single() && ! has_post_thumbnail() && ! empty( $header_image ) ) {
+			$classes[] = 'portfolio-header-active';
+		} else {
+			$classes[] = 'portfolio-header-inactive';
+		}
+
+		if ( is_singular() ) {
+			$classes[] = 'portfolio-singular';
+		}
+
+		if ( is_page() && is_active_sidebar( 'sidebar-1' ) || is_home() && is_active_sidebar( 'sidebar-blog' ) || is_category( 'blog' ) && is_active_sidebar( 'sidebar-blog' ) || is_archive() && is_active_sidebar( 'sidebar-blog' ) || is_search() && is_active_sidebar( 'sidebar-blog' ) ) {
+			$classes[] = 'portfolio-has-sidebar';
+		} else {
+			$classes[] = 'portfolio-no-sidebar';
+		}
+
+		if ( is_active_sidebar( 'sidebar-1' ) ) {
+			$classes[] = 'portfolio-sidebar-1';
+		}
+
+		if ( '' != get_theme_mod( 'background_image' ) ) {
+			// This class will render when a background image is set
+			// regardless of whether the user has set a color as well.
+			$classes[] = 'portfolio-background-image';
+		} else if ( ! in_array( get_background_color(), array( '', get_theme_support( 'custom-background', 'default-color' ) ), true ) ) {
+			// This class will render when a background color is set
+			// but no image is set. In the case the content text will
+			// Adjust relative to the background color.
+			$classes[] = 'portfolio-relative-text';
+		}
+
+		return $classes;
 	}
-
-	if ( '' != get_theme_mod( 'portfolio_lite_site_title', '1' ) ) {
-		$classes[] = 'portfolio-has-title';
-	} else {
-		$classes[] = 'portfolio-no-title';
-	}
-
-	if ( '' != get_theme_mod( 'portfolio_lite_site_tagline', '1' ) ) {
-		$classes[] = 'portfolio-has-desc';
-	} else {
-		$classes[] = 'portfolio-no-desc';
-	}
-
-	if ( is_page_template( 'template-blog.php' ) ) {
-		$classes[] = 'archive';
-	}
-
-	if ( ! is_single() ) {
-		$classes[] = 'portfolio-not-single';
-	}
-
-	if ( is_singular() && ! has_post_thumbnail() ) {
-		$classes[] = 'portfolio-no-img'; }
-
-	if ( is_singular() && has_post_thumbnail() ) {
-		$classes[] = 'portfolio-has-img'; }
-
-	if ( $post_pages && ! empty( $header_image ) || is_page() && ! has_post_thumbnail() && ! empty( $header_image ) || is_single() && ! has_post_thumbnail() && ! empty( $header_image ) ) {
-		$classes[] = 'portfolio-header-active';
-	} else {
-		$classes[] = 'portfolio-header-inactive';
-	}
-
-	if ( is_singular() ) {
-		$classes[] = 'portfolio-singular';
-	}
-
-	if ( is_page() && is_active_sidebar( 'sidebar-1' ) || is_home() && is_active_sidebar( 'sidebar-blog' ) || is_category( 'blog' ) && is_active_sidebar( 'sidebar-blog' ) || is_archive() && is_active_sidebar( 'sidebar-blog' ) || is_search() && is_active_sidebar( 'sidebar-blog' ) ) {
-		$classes[] = 'portfolio-has-sidebar';
-	} else {
-		$classes[] = 'portfolio-no-sidebar';
-	}
-
-	if ( is_active_sidebar( 'sidebar-1' ) ) {
-		$classes[] = 'portfolio-sidebar-1';
-	}
-
-	if ( '' != get_theme_mod( 'background_image' ) ) {
-		// This class will render when a background image is set
-		// regardless of whether the user has set a color as well.
-		$classes[] = 'portfolio-background-image';
-	} else if ( ! in_array( get_background_color(), array( '', get_theme_support( 'custom-background', 'default-color' ) ), true ) ) {
-		// This class will render when a background color is set
-		// but no image is set. In the case the content text will
-		// Adjust relative to the background color.
-		$classes[] = 'portfolio-relative-text';
-	}
-
-	return $classes;
-}
 endif;
 add_action( 'body_class', 'portfolio_lite_body_class' );
 

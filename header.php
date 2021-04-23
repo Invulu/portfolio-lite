@@ -84,12 +84,10 @@
 	<!-- BEGIN #panel -->
 	<main id="panel" class="container clearfix">
 
-		<?php if ( ! is_single() ) { ?>
-
 		<!-- BEGIN .four columns -->
 		<div id="header" class="four columns side-header">
 
-			<?php if ( has_custom_logo() ) { ?>
+			<?php if ( has_custom_logo() && ! is_single() ) { ?>
 
 				<div class="site-logo"><?php the_custom_logo(); ?></div>
 
@@ -143,6 +141,8 @@
 
 		<!-- END .four columns -->
 		</div>
+
+		<?php if ( ! is_single() ) { ?>
 
 		<!-- BEGIN .twelve columns -->
 		<div class="twelve columns">
